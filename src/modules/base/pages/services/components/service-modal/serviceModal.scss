@@ -1,0 +1,42 @@
+@import "../../../../../../styles/variables.scss";
+
+:root[data-theme="Dark"] {
+	.crm-services__service__button {
+		border-color: $dark-color-secondary;
+		color: $dark-color-text;
+
+		&:hover {
+			color: $dark-color-accent;
+			border-color: $dark-color-accent;
+		}
+	}
+}
+
+:root[data-theme="Light"] {
+	.crm-services__service__button {
+		border-color: $light-color-secondary;
+		color: $light-color-text;
+
+		&:hover {
+			color: $light-color-accent;
+			border-color: $light-color-accent;
+		}
+	}
+}
+
+.crm-services__service {
+	&__modal {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		&-content {
+			flex: 1;
+		}
+
+		&-actions {
+			display: flex;
+			justify-content: flex-end;
+		}
+	}
+}

@@ -1,0 +1,25 @@
+@import "../../../../../../styles/variables.scss";
+
+:root[data-theme="Dark"] {
+    .crm-services-list__empty {
+        color: $dark-color-text;
+    }
+}
+
+:root[data-theme="Light"] {
+    .crm-services-list__empty {
+        color: $light-color-text;
+    }
+}
+
+.crm-services-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    &__empty {
+        text-align: center;
+        padding: $sizing-l;
+        margin: 0;
+    }
+}

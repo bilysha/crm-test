@@ -1,0 +1,47 @@
+@import "../../styles/variables.scss";
+
+:root[data-theme="Dark"] {
+    .primary {
+        color: $dark-color-text;
+        background-color: $dark-color-accent;
+    }
+
+    .secondary {
+        color: $dark-color-text;
+        background-color: transparent;
+        border-color: $dark-color-primary;
+    }
+
+    .warn {
+        color: $dark-color-text;
+        background-color: $color-error;
+    }
+}
+
+:root[data-theme="Light"] {
+    .primary {
+        color: $color-white;
+        background-color: $light-color-accent;
+    }
+
+    .secondary {
+        color: $light-color-text;
+        background-color: transparent;
+        border-color: $light-color-primary;
+    }
+
+    .warn {
+        color: $color-white;
+        background-color: $color-error;
+    }
+}
+
+.button {
+    padding: $sizing-s $sizing-l;
+    border-radius: $border-radius-small;
+    border: none;
+}
+
+.secondary {
+    border: 1px solid;
+}

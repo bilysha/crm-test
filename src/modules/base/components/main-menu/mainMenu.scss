@@ -1,0 +1,130 @@
+@import "../../../../styles/variables.scss";
+
+:root[data-theme="Dark"] {
+    .crm-main-menu {
+        &__logo {
+            background-color: $dark-color-text;
+            color: $dark-color-primary;
+
+            &-container {
+                border-bottom: 2px solid $dark-color-secondary;
+            }
+        }
+
+        &__nav-list.user-options {
+            background-color: $dark-color-secondary;
+        }
+
+        &__logout-button {
+            color: $color-error;
+
+            &:hover,
+            &:focus {
+                background-color: #4d2b2b;
+            }
+        }
+    }
+}
+
+:root[data-theme="Light"] {
+    .crm-main-menu {
+        &__logo {
+            background-color: $light-color-text;
+            color: $light-color-primary;
+
+            &-container {
+                border-bottom: 2px solid $light-color-secondary;
+            }
+        }
+
+        &__nav-list.user-options {
+            background-color: $light-color-secondary;
+        }
+
+        &__logout-button {
+            color: $color-error;
+
+            &:hover,
+            &:focus {
+                background-color: #e9c3c3;
+            }
+        }
+    }
+}
+
+.crm-main-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    padding-bottom: $sizing-m;
+
+    &__logo {
+        border-radius: 50%;
+        width: 3rem;
+        height: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: $font-size-s;
+        font-weight: bold;
+
+        &-container {
+            padding-top: 0.8rem;
+            padding-bottom: 1.25rem;
+        }
+    }
+
+    &__content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__nav {
+        display: flex;
+        flex-direction: column;
+        padding-top: $sizing-m;
+
+        &-list {
+            display: flex;
+            flex-direction: column;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            margin-bottom: $sizing-m;
+
+            &-item {
+                display: flex;
+                justify-content: center;
+
+                &:not(:last-child) {
+                    margin-bottom: $sizing-m;
+                }
+            }
+
+            &.user-options {
+                padding: $sizing-xs;
+                border-radius: 2rem;
+            }
+        }
+    }
+
+    &__logout {
+        display: flex;
+        justify-content: center;
+
+        &-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            border-radius: 50%;
+            background-color: transparent;
+            font-size: $font-size-l;
+            padding: $sizing-s;
+            margin: 0;
+        }
+    }
+}

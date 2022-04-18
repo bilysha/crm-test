@@ -1,0 +1,12 @@
+@import "../../../../../../styles/variables.scss";
+
+.crm-services-list-item {
+	max-height: 4rem;
+	overflow: hidden;
+	margin-bottom: $sizing-m;
+	transition: max-height 0.5s;
+
+	&.expanded {
+		max-height: 20rem;
+	}
+}

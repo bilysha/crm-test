@@ -1,0 +1,45 @@
+@import "../../../../styles/variables.scss";
+
+:root[data-theme="Dark"] {
+    .crm-main-menu-item {
+        color: $dark-color-text;
+
+        &:not(.active):hover,
+        &:not(.active):focus {
+            color: $dark-color-accent;
+            background-color: $dark-color-secondary;
+        }
+
+        &.active {
+            background-color: $dark-color-accent;
+        }
+    }
+}
+
+:root[data-theme="Light"] {
+	.crm-main-menu-item {
+        color: $light-color-text;
+
+        &:not(.active):hover,
+        &:not(.active):focus {
+            color: $light-color-accent;
+            background-color: $light-color-secondary;
+        }
+
+        &.active {
+			color: #fff;
+            background-color: $light-color-accent;
+        }
+    }
+}
+
+.crm-main-menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: none;
+    padding: $sizing-s;
+    background-color: transparent;
+    font-size: $font-size-l;
+}

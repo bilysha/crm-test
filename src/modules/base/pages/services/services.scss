@@ -1,0 +1,47 @@
+@import "../../../../styles/variables.scss";
+
+:root[data-theme="Dark"] {
+    .crm-services__add-new-category__button {
+        border-color: $dark-color-secondary;
+        color: $dark-color-text;
+
+        &:hover {
+            background-color: $dark-color-secondary;
+        }
+    }
+}
+
+:root[data-theme="Light"] {
+    .crm-services__add-new-category__button {
+        border-color: $light-color-secondary;
+        color: $light-color-text;
+
+        &:hover {
+            background-color: $light-color-secondary;
+        }
+    }
+}
+
+.crm-services {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding-right: $sizing-s;
+
+    &__add-new-category {
+        margin-bottom: $sizing-m;
+
+        &__button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent;
+            padding: $sizing-m $sizing-l;
+            width: 100%;
+            cursor: pointer;
+            transition: all 0.5s;
+            border: 2px dashed;
+            border-radius: $border-radius-small;
+        }
+    }
+}

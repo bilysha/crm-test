@@ -1,0 +1,30 @@
+@import "../../../../../../styles/variables.scss";
+
+:root[data-theme="Dark"] {
+    .crm-client-orders-history__list-item {
+        background-color: $dark-color-secondary;
+    }
+}
+
+:root[data-theme="Light"] {
+    .crm-client-orders-history__list-item {
+        background-color: $light-color-secondary;
+    }
+}
+
+.crm-client-orders-history__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    padding-right: $sizing-s;
+
+    &-item {
+        padding: $sizing-m;
+        border-radius: $border-radius-small;
+
+        &:not(:last-child) {
+            margin-bottom: $sizing-m;
+        }
+    }
+}

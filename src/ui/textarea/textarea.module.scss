@@ -1,0 +1,44 @@
+@import "../../styles/variables.scss";
+
+:root[data-theme="Dark"] {
+    .textareaContainer {
+        color: $dark-color-text;
+    }
+
+    .textarea {
+        color: $dark-color-text;
+        background-color: $dark-color-primary;
+    }
+}
+
+:root[data-theme="Light"] {
+    .textareaContainer {
+        color: $light-color-text;
+    }
+
+    .textarea {
+        color: $light-color-text;
+        background-color: $light-color-primary;
+    }
+}
+
+.textareaContainer {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: $sizing-m;
+}
+
+.label {
+    margin-bottom: $sizing-s;
+}
+
+.textarea {
+    border-radius: $border-radius-small;
+    border: none;
+    padding: $sizing-xs $sizing-m;
+	resize: none;
+
+    &:focus {
+        outline: none;
+    }
+}

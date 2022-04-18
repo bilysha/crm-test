@@ -1,0 +1,61 @@
+@import "../../styles/variables.scss";
+
+:root[data-theme="Dark"] {
+    .crm-authorization {
+        background-color: $dark-color-primary;
+
+        &__container {
+            background-color: $dark-color-secondary;
+            color: $dark-color-text;
+
+            &-actions__action:not(:last-child) {
+                border-right: 2px solid $dark-color-primary;
+            }
+        }
+    }
+}
+
+:root[data-theme="Light"] {
+    .crm-authorization {
+        background-color: $light-color-primary;
+
+        &__container {
+            background-color: $light-color-secondary;
+            color: $light-color-text;
+
+            &-actions__action:not(:last-child) {
+                border-right: 2px solid $light-color-primary;
+            }
+        }
+    }
+}
+
+.crm-authorization {
+    display: flex;
+    flex: 1;
+    padding: 5rem;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 20rem;
+        border-radius: $border-radius-base;
+        padding: $sizing-m;
+
+        &-content {
+            flex: 1;
+        }
+
+        &-actions {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+            &__action:not(:last-child) {
+                margin-right: $sizing-m;
+                padding-right: $sizing-m;
+            }
+        }
+    }
+}

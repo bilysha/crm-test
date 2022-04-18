@@ -1,0 +1,34 @@
+@import "./variables.scss";
+
+:root[data-theme="Dark"] {
+    *::-webkit-scrollbar-track {
+        background: $dark-color-secondary;
+    }
+
+    *::-webkit-scrollbar-thumb {
+        background-color: $dark-color-primary;
+		border-color: $dark-color-secondary;
+    }
+}
+
+:root[data-theme="Light"] {
+    *::-webkit-scrollbar-track {
+        background: $light-color-secondary;
+    }
+
+    *::-webkit-scrollbar-thumb {
+        background-color: $light-color-primary;
+		border-color: $light-color-secondary;
+    }
+}
+
+*::-webkit-scrollbar {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: $border-radius-base;
+}
+
+*::-webkit-scrollbar-thumb {
+    border-radius: $border-radius-base;
+    border: 2px solid;
+}

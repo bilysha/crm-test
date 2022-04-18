@@ -1,0 +1,53 @@
+@import "../../styles/variables.scss";
+
+:root[data-theme="Dark"] {
+    .inputContainer {
+        color: $dark-color-text;
+    }
+
+    .input {
+        color: $dark-color-text;
+        background-color: $dark-color-primary;
+    }
+}
+
+:root[data-theme="Light"] {
+    .inputContainer {
+        color: $light-color-text;
+    }
+
+    .input {
+        color: $light-color-text;
+        background-color: $light-color-primary;
+    }
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: $sizing-m;
+}
+
+.label {
+    margin-bottom: $sizing-s;
+}
+
+.normal {
+    max-width: 12rem;
+}
+
+.input {
+    border-radius: $border-radius-small;
+    border: none;
+    padding: $sizing-xs $sizing-m;
+    min-width: 1rem;
+    width: 100%;
+
+    &:focus {
+        outline: none;
+    }
+
+    [type="date"] {
+        max-width: 5rem;
+    }
+}

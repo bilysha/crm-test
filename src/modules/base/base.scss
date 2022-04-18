@@ -1,0 +1,84 @@
+@import "../../styles/variables.scss";
+
+:root[data-theme="Dark"] {
+    .crm-base {
+        background-color: $dark-color-primary;
+
+        &__menu {
+            border-right: 2px solid $dark-color-secondary;
+        }
+
+        &__main-heading {
+            color: $dark-color-text;
+            border-bottom: 2px solid $dark-color-secondary;
+
+            &-actions__action:not(:last-child) {
+                border-right: 2px solid $dark-color-secondary;
+            }
+        }
+    }
+}
+
+:root[data-theme="Light"] {
+    .crm-base {
+        background-color: $light-color-primary;
+
+        &__menu {
+            border-right: 2px solid $light-color-secondary;
+        }
+
+        &__main-heading {
+            color: $light-color-text;
+            border-bottom: 2px solid $light-color-secondary;
+
+            &-actions__action:not(:last-child) {
+                border-right: 2px solid $light-color-secondary;
+            }
+        }
+    }
+}
+
+.crm-base {
+    display: flex;
+    height: 100%;
+    flex: 1;
+    padding: $sizing-m;
+
+    &__menu {
+        display: flex;
+        margin-right: $sizing-m;
+        padding-right: $sizing-m;
+    }
+
+    &__main {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        overflow: auto;
+
+        &-heading {
+            margin-bottom: $sizing-m;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &-actions {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+
+                &__action:not(:last-child) {
+                    margin-right: $sizing-m;
+                    padding-right: $sizing-m;
+                }
+            }
+        }
+
+        &-content {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            overflow: auto;
+        }
+    }
+}

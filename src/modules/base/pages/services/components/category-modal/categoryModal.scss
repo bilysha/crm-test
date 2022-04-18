@@ -1,0 +1,18 @@
+@import "../../../../../../styles/variables.scss";
+
+.crm-services__category {
+	&__modal {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		&-content {
+			flex: 1;
+		}
+
+		&-actions {
+			display: flex;
+			justify-content: flex-end;
+		}
+	}
+}

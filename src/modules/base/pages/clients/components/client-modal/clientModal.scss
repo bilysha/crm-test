@@ -1,0 +1,30 @@
+@import "../../../../../../styles/variables.scss";
+
+.crm-clients__client {
+    &__modal {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &-content {
+            flex: 1;
+
+            &__row {
+                display: flex;
+
+                &-item {
+                    flex: 1;
+
+                    &:not(:last-child) {
+                        margin-right: $sizing-s;
+                    }
+                }
+            }
+        }
+
+        &-actions {
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+}

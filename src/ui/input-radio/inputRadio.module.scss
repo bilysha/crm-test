@@ -1,0 +1,66 @@
+@import "../../styles/variables.scss";
+
+:root[data-theme="Dark"] {
+    .inputRadioGroup {
+        background-color: $dark-color-primary;
+    }
+
+    .label,
+    .radioLabel {
+        color: $dark-color-text;
+    }
+
+    .radio {
+        accent-color: $dark-color-accent;
+    }
+}
+
+:root[data-theme="Light"] {
+    .inputRadioGroup {
+        background-color: $light-color-primary;
+    }
+
+    .label,
+    .radioLabel {
+        color: $light-color-text;
+    }
+
+    .radio {
+        accent-color: $light-color-accent;
+    }
+}
+
+.inputRadioContainer {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: $sizing-m;
+}
+
+.label {
+    margin-bottom: $sizing-s;
+}
+
+.radioContainer {
+    display: flex;
+    align-items: center;
+    margin-right: $sizing-m;
+    padding: 0.125rem 0;
+    cursor: pointer;
+}
+
+.radio {
+    margin-right: $sizing-xs;
+}
+
+.radio,
+.radioLabel {
+    cursor: pointer;
+}
+
+.inputRadioGroup {
+    display: flex;
+    align-items: center;
+    padding: $sizing-xs $sizing-m;
+    border-radius: $border-radius-small;
+}
+

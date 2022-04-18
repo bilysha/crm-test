@@ -1,0 +1,143 @@
+@import "../../../../../../styles/variables.scss";
+
+:root[data-theme="Dark"] {
+    .crm-client-detail {
+        &__heading {
+            border-color: $dark-color-secondary;
+
+            &__photo {
+                background-color: $dark-color-text;
+            }
+
+            &__name {
+                color: $dark-color-text;
+            }
+        }
+
+        &__main {
+            color: $dark-color-text;
+
+            &__row {
+                &.special {
+                    background-color: $dark-color-secondary;
+                }
+            }
+
+            &-info {
+                border-color: $dark-color-secondary;
+            }
+        }
+    }
+}
+
+:root[data-theme="Light"] {
+    .crm-client-detail {
+        &__heading {
+            border-color: $light-color-secondary;
+
+            &__photo {
+                background-color: $light-color-text;
+            }
+
+            &__name {
+                color: $light-color-text;
+            }
+        }
+
+        &__main {
+            color: $light-color-text;
+
+            &__row {
+                &.special {
+                    background-color: $light-color-secondary;
+                }
+            }
+
+            &-info {
+                border-color: $light-color-secondary;
+            }
+        }
+    }
+}
+
+.crm-client-detail {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 0 $sizing-m;
+
+    &__heading {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: $sizing-m;
+        margin-bottom: $sizing-m;
+        border-bottom: 2px solid;
+
+        &-info {
+            display: flex;
+            align-items: center;
+        }
+
+        &-actions {
+            display: flex;
+            align-items: center;
+        }
+
+        &__photo {
+            border-radius: 50%;
+            margin-right: $sizing-m;
+        }
+
+        &__name {
+            h2 {
+                margin: 0;
+                padding: 0;
+            }
+        }
+    }
+
+    &__main {
+        display: flex;
+        flex: 1;
+        overflow: auto;
+
+        &-info,
+        &-history {
+            flex: 1;
+            padding: 0 $sizing-m;
+        }
+
+        &-info {
+            border-right: 2px solid;
+        }
+
+        &-history {
+            overflow: auto;
+            display: flex;
+            flex-direction: column;
+            padding-right: 0;
+
+            p {
+                margin-top: 0;
+                margin-bottom: $sizing-m;
+            }
+        }
+
+        &__row {
+            margin-bottom: $sizing-m;
+            padding: $sizing-s;
+            border-radius: $border-radius-small;
+
+            &-label {
+                margin: 0;
+                margin-bottom: $sizing-s;
+            }
+
+            &-value {
+                margin: 0;
+                padding: 0;
+                padding-left: $sizing-s;
+            }
+        }
+    }
+}

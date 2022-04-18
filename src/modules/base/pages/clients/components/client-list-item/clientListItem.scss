@@ -1,0 +1,80 @@
+@import "../../../../../../styles/variables.scss";
+
+:root[data-theme="Dark"] {
+    .crm-clients-list-item {
+        &__button {
+            background-color: transparent;
+            border-color: $dark-color-secondary;
+
+            &:hover {
+                background-color: $dark-color-secondary;
+            }
+
+            &.selected {
+                background-color: $dark-color-accent;
+                border-color: $dark-color-accent;
+            }
+        }
+
+        &__photo {
+            background-color: $dark-color-text;
+        }
+
+        &__name {
+            color: $dark-color-text;
+        }
+    }
+}
+
+:root[data-theme="Light"] {
+    .crm-clients-list-item {
+        &__button {
+            background-color: transparent;
+            border-color: $light-color-secondary;
+
+            &:not(.selected):hover {
+                background-color: $light-color-secondary;
+            }
+
+            &.selected {
+                background-color: $light-color-accent;
+                border-color: $light-color-accent;
+
+                .crm-clients-list-item__name {
+                    color: $color-white;
+                }
+            }
+        }
+
+        &__photo {
+            background-color: $light-color-text;
+        }
+
+        &__name {
+            color: $light-color-text;
+        }
+    }
+}
+
+.crm-clients-list-item {
+    &__button {
+        border: 2px solid;
+        border-radius: $border-radius-small;
+        padding: $sizing-s;
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    &__photo {
+        width: 1.5rem;
+        margin-right: $sizing-s;
+        border-radius: 50%;
+    }
+
+    &__name {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}

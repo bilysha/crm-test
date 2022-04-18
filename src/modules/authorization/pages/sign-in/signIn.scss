@@ -1,0 +1,36 @@
+@import "../../../../styles/variables.scss";
+
+:root[data-theme="Dark"] {
+    .crm-sign-in__heading {
+        border-bottom: 2px solid $dark-color-primary;
+    }
+}
+
+:root[data-theme="Light"] {
+    .crm-sign-in__heading {
+        border-bottom: 2px solid $light-color-primary;
+    }
+}
+
+.crm-sign-in {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    &__heading {
+        padding-bottom: $sizing-m;
+
+        h2 {
+            margin: 0;
+        }
+    }
+
+    &__form {
+        padding-top: $sizing-m;
+        
+        &-actions {
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+}

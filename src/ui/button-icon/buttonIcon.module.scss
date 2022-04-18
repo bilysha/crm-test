@@ -1,0 +1,31 @@
+@import "../../styles/variables.scss";
+
+:root[data-theme="Dark"] {
+    .buttonIcon {
+        color: $dark-color-text;
+
+        &:hover {
+            color: $dark-color-accent;
+        }
+    }
+}
+
+:root[data-theme="Light"] {
+    .buttonIcon {
+        color: $light-color-text;
+
+        &:hover {
+            color: $dark-color-accent;
+        }
+    }
+}
+
+.buttonIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: transparent;
+    font-size: $font-size-l;
+    transition: color 0.5s;
+}
