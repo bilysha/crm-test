@@ -5,9 +5,14 @@
         color: $dark-color-text;
     }
 
-    .input {
+    .primary {
         color: $dark-color-text;
         background-color: $dark-color-primary;
+    }
+
+    .secondary {
+        color: $dark-color-text;
+        background-color: $dark-color-secondary;
     }
 }
 
@@ -16,9 +21,14 @@
         color: $light-color-text;
     }
 
-    .input {
+    .primary {
         color: $light-color-text;
         background-color: $light-color-primary;
+    }
+
+    .secondary {
+        color: $light-color-text;
+        background-color: $light-color-secondary;
     }
 }
 
@@ -34,6 +44,10 @@
 
 .normal {
     max-width: 12rem;
+}
+
+.large {
+    max-width: 24rem;
 }
 
 .input {

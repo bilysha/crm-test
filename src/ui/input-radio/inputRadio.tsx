@@ -1,4 +1,4 @@
-import React from 'react';
+import {isEqual} from 'lodash';
 import classes from './inputRadio.module.scss';
 
 function InputRadio({label, options, onChange, value}: any) {
@@ -13,7 +13,7 @@ function InputRadio({label, options, onChange, value}: any) {
 						id={`choice-${index}`}
 						name="contact"
 						onChange={onChange}
-						checked={option.value === value}
+						checked={isEqual(option.value, value)}
 						value={option.value} />
 					<label
 						className={classes.radioLabel}

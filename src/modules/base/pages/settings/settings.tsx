@@ -1,7 +1,7 @@
 import './settings.scss';
 
 function Settings() {
-	return <div>Settings content</div>
+	return <div className="crm-settings"></div>
 }
 
 export default Settings;

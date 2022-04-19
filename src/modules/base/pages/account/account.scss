@@ -1,0 +1,111 @@
+@import "../../../../styles/variables.scss";
+
+:root[data-theme="Dark"] {
+    .crm-account {
+        &__content-block {
+            border-color: $dark-color-secondary;
+
+            &__heading {
+                color: $dark-color-text;
+            }
+
+            &__main-item {
+                color: $dark-color-text;
+            }
+
+            &__user-info {
+                color: $dark-color-text;
+
+                &__avatar {
+                    background-color: $dark-color-secondary;
+                }
+            }
+        }
+    }
+}
+
+:root[data-theme="Light"] {
+    .crm-account {
+        &__content-block {
+            border-color: $light-color-secondary;
+
+            &__heading {
+                color: $light-color-text;
+            }
+
+            &__main-item {
+                color: $light-color-text;
+            }
+
+            &__user-info {
+                color: $light-color-text;
+
+                &__avatar {
+                    background-color: $light-color-secondary;
+                }
+            }
+        }
+    }
+}
+
+.crm-account {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 0 $sizing-m;
+    overflow: auto;
+    flex: 1;
+
+    &__main {
+        display: flex;
+        flex-direction: column;
+        overflow: auto;
+    }
+
+    &__content-block {
+        padding-bottom: $sizing-m;
+        border-bottom: 2px solid;
+
+        &.one-line {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &__main {
+            padding: 0 $sizing-m;
+
+            &-item {
+                &__value {
+                    margin-left: $sizing-m;
+                }
+            }
+        }
+
+        &__user-info {
+            display: flex;
+            align-items: center;
+
+            &__avatar {
+                padding: $sizing-s;
+                border-radius: 50%;
+                font-size: $font-size-xxl;
+                letter-spacing: 0;
+                word-spacing: 0;
+                width: 5rem;
+                height: 5rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            &__name {
+                margin-left: $sizing-m;
+
+                h2 {
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
