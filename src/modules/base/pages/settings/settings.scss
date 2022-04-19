@@ -1,0 +1,37 @@
+@import "../../../../styles/variables.scss";
+
+:root[data-theme="Dark"] {
+    .crm-settings__row {
+        color: $dark-color-text;
+
+        &:not(:last-child) {
+            border-color: $dark-color-secondary;
+        }
+    }
+}
+
+:root[data-theme="Light"] {
+    .crm-settings__row {
+        color: $light-color-text;
+
+        &:not(:last-child) {
+            border-color: $light-color-secondary;
+        }
+    }
+}
+
+.crm-settings {
+    position: relative;
+
+    &__row {
+        padding-bottom: $sizing-m;
+
+        &:not(:last-child) {
+            border-bottom: 2px solid;
+        }
+
+        &-item {
+            padding-left: $sizing-m;
+        }
+    }
+}
