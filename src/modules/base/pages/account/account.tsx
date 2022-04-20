@@ -4,12 +4,11 @@ import Button from 'ui/button/button';
 import Input from 'ui/input/input';
 import {formatDate, formatPhomeNumber} from '../clients/utils/clientsUtils';
 import './account.scss';
-import PersonalInfoModal from './components/personal-info-modal/personalInfoModal';
+import PersonalInfoSlideout from './components/personal-info-slideout/personalInfoSlideout';
 
 const MOCK_USER = {
 	firstName: 'Ilya',
 	lastName: 'Belavusau',
-	username: 'ilya.belavusau',
 	email: 'ilyaibelousov@gmail.com',
 	phone: '375259224653',
 	dateOfBirth: '1996-03-12'
@@ -32,10 +31,10 @@ function Account() {
 
 	return <div className="crm-account">
 		{
-			personalInfoModalVisibility && <PersonalInfoModal
+			personalInfoModalVisibility && <PersonalInfoSlideout
 				translations={translations}
 				personalInfo={user}
-				setModalVisibility={setPersonalInfoModaVisibility}
+				setVisibility={setPersonalInfoModaVisibility}
 				onCancel={onPersonalInfoCancelled}
 				onApply={onPersonalInfoApplied} />
 		}
@@ -79,18 +78,6 @@ function Account() {
 						</h3>
 						<div className="crm-account__content-block__main-item__value">
 							{formatDate(user.dateOfBirth)}
-						</div>
-					</div>
-				</div>
-			</div>
-			<div className="crm-account__content-block">
-				<div className="crm-account__content-block__main">
-					<div className="crm-account__content-block__main-item">
-						<h3 className="crm-account__content-block__main-item__label">
-							{translations['account.section.username.username']}
-						</h3>
-						<div className="crm-account__content-block__main-item__value">
-							{user.username}
 						</div>
 					</div>
 				</div>
