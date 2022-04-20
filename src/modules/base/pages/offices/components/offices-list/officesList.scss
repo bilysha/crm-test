@@ -1,5 +1,17 @@
 @import "styles/variables.scss";
 
+:root[data-theme="Dark"] {
+    .crm-offices-list__empty {
+        color: $dark-color-text;
+    }
+}
+
+:root[data-theme="Light"] {
+    .crm-offices-list__empty {
+        color: $light-color-text;
+    }
+}
+
 .crm-offices-list {
     list-style: none;
     padding: 0;
@@ -10,7 +22,6 @@
 	padding: $sizing-m;
 
     &__empty {
-        color: $dark-color-text;
         text-align: center;
     }
 }
