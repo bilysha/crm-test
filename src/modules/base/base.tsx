@@ -10,7 +10,6 @@ import {getPageTitleKey} from '../../components/router/routerUtils';
 function Base() {
 	const location = useLocation();
 	const [translations, translationsLoading] = useTranslation({path: 'base', filename: 'base'});
-
 	const currentPageTitleKey = useMemo(() => getPageTitleKey(location), [location.pathname]);
 
 	return <div className="crm-base">
