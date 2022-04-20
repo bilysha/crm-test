@@ -5,6 +5,7 @@ import {MdViewList} from '@react-icons/all-files/md/MdViewList';
 import {BiUser} from '@react-icons/all-files/bi/BiUser';
 import {FiSettings} from '@react-icons/all-files/fi/FiSettings';
 import {BsCalendar} from '@react-icons/all-files/bs/BsCalendar';
+import {BiBuildings} from '@react-icons/all-files/bi/BiBuildings';
 import {APP_ROUTES} from './routerConstants';
 
 export const APP_PAGES = [
@@ -13,6 +14,12 @@ export const APP_PAGES = [
 		menuKey: 'main.menu.option.dashboard',
 		path: APP_ROUTES.DASHBOARD,
 		icon: <MdDashboard />
+	},
+	{
+		titleKey: 'page.heading.offices',
+		menuKey: 'main.menu.option.offices',
+		path: APP_ROUTES.OFFICES,
+		icon: <BiBuildings />
 	},
 	{
 		titleKey: 'page.heading.orders',

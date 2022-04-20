@@ -2,6 +2,7 @@
 export const BASE_ROUTE = '/base';
 
 export const DASHBOARD_ROUTE = 'dashboard';
+export const OFFICES_ROUTE = 'offices';
 export const ORDERS_ROUTE = 'orders';
 export const CALENDAR_ROUTE = 'calendar';
 export const CLIENTS_ROUTE = 'clients';
@@ -11,6 +12,7 @@ export const SETTINGS_ROUTE = 'settings';
 
 export const APP_ROUTES = {
 	DASHBOARD: `${BASE_ROUTE}/${DASHBOARD_ROUTE}`,
+	OFFICES: `${BASE_ROUTE}/${OFFICES_ROUTE}`,
 	ORDERS: `${BASE_ROUTE}/${ORDERS_ROUTE}`,
 	CALENDAR: `${BASE_ROUTE}/${CALENDAR_ROUTE}`,
 	CLIENTS: `${BASE_ROUTE}/${CLIENTS_ROUTE}`,

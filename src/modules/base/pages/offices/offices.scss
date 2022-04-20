@@ -1,0 +1,25 @@
+@import "styles/variables.scss";
+
+:root[data-theme="Dark"] {
+    .crm-offices__heading-count {
+        color: $dark-color-text;
+    }
+}
+
+:root[data-theme="Light"] {
+    .crm-offices__heading-count {
+        color: $light-color-text;
+    }
+}
+
+.crm-offices {
+    &__heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &-count {
+            margin: 0;
+        }
+    }
+}

@@ -5,6 +5,7 @@ import Account from 'modules/base/pages/account/account';
 import Calendar from 'modules/base/pages/calendar/calendar';
 import Clients from 'modules/base/pages/clients/clients';
 import Dashboard from 'modules/base/pages/dashboard/dashboard';
+import Offices from 'modules/base/pages/offices/offices';
 import Orders from 'modules/base/pages/orders/orders';
 import Services from 'modules/base/pages/services/services';
 import Settings from 'modules/base/pages/settings/settings';
@@ -22,6 +23,7 @@ import {
 	CALENDAR_ROUTE,
 	CLIENTS_ROUTE,
 	DASHBOARD_ROUTE,
+	OFFICES_ROUTE,
 	ORDERS_ROUTE,
 	SERVICES_ROUTE,
 	SETTINGS_ROUTE,
@@ -36,6 +38,7 @@ function AppRouter() {
 		</Route>
 		<Route path={BASE_ROUTE} element={<Base />} >
 			<Route path={DASHBOARD_ROUTE} element={<Dashboard />} />
+			<Route path={OFFICES_ROUTE} element={<Offices />} />
 			<Route path={ORDERS_ROUTE} element={<Orders />} />
 			<Route path={CLIENTS_ROUTE} element={<Clients />} />
 			<Route path={CALENDAR_ROUTE} element={<Calendar />} />

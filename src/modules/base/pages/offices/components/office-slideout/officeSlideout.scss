@@ -1,0 +1,14 @@
+@import "styles/variables.scss";
+
+.crm-office-form {
+	&__item {
+		&__row-combined {
+			display: flex;
+
+			& > *:not(:last-child) {
+				margin-right: $sizing-xs;
+				padding-right: $sizing-xs;
+			}
+		}
+	}
+}

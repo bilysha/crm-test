@@ -1,0 +1,39 @@
+@import "styles/variables.scss";
+
+:root[data-theme="Dark"] {
+    .crm-slideout-content__footer {
+        border-color: $dark-color-primary;
+    }
+}
+
+:root[data-theme="Light"] {
+    .crm-slideout-content__footer {
+        border-color: $light-color-primary;
+    }
+}
+
+.crm-slideout-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+
+    &__main {
+        flex: 1;
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+        padding: $sizing-m;
+    }
+
+    &__footer {
+        display: flex;
+        justify-content: flex-end;
+        padding: $sizing-m;
+        border-top: 2px solid;
+
+        button:not(:last-child) {
+            margin-right: $sizing-s;
+        }
+    }
+}
