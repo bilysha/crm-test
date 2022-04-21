@@ -10,11 +10,35 @@
         color: $dark-color-text;
         background-color: transparent;
         border-color: $dark-color-primary;
+
+        &:hover {
+            border-color: $dark-color-text;
+        }
     }
 
     .warn {
         color: $dark-color-text;
         background-color: $color-error;
+    }
+
+    .dashedPrimary {
+        color: $dark-color-text;
+        background-color: transparent;
+        border: 2px dashed $dark-color-primary;
+
+        &:hover {
+            background-color: $dark-color-primary;
+        }
+    }
+
+    .dashedSecondary {
+        color: $dark-color-text;
+        background-color: transparent;
+        border: 2px dashed $dark-color-secondary;
+
+        &:hover {
+            background-color: $dark-color-secondary;
+        }
     }
 }
 
@@ -28,11 +52,35 @@
         color: $light-color-text;
         background-color: transparent;
         border-color: $light-color-primary;
+
+        &:hover {
+            border-color: $light-color-text;
+        }
     }
 
     .warn {
         color: $color-white;
         background-color: $color-error;
+    }
+
+    .dashedPrimary {
+        color: $light-color-text;
+        background-color: transparent;
+        border: 2px dashed $light-color-primary;
+
+        &:hover {
+            background-color: $light-color-primary;
+        }
+    }
+
+    .dashedSecondary {
+        color: $light-color-text;
+        background-color: transparent;
+        border: 2px dashed $light-color-secondary;
+
+        &:hover {
+            background-color: $light-color-secondary;
+        }
     }
 }
 
@@ -40,6 +88,9 @@
     padding: $sizing-s $sizing-l;
     border-radius: $border-radius-small;
     border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .secondary {

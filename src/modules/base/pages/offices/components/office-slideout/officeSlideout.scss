@@ -1,14 +1,29 @@
 @import "styles/variables.scss";
 
 .crm-office-form {
-	&__item {
-		&__row-combined {
-			display: flex;
+    &__item {
+        position: relative;
+        padding-top: $sizing-s;
 
-			& > *:not(:last-child) {
-				margin-right: $sizing-xs;
-				padding-right: $sizing-xs;
-			}
-		}
-	}
+        &:not(:last-child) {
+            padding-bottom: $sizing-s;
+            margin-bottom: $sizing-m;
+            border-bottom: 2px solid $dark-color-primary;
+        }
+
+        &-delete-action {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        &__row-combined {
+            display: flex;
+
+            & > *:not(:last-child) {
+                margin-right: $sizing-xs;
+                padding-right: $sizing-xs;
+            }
+        }
+    }
 }

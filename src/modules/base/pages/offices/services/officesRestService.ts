@@ -8,14 +8,12 @@ export default class OfficesRestService {
 		return Promise.resolve(this.getFromStorage());
 	}
 
-	public static add(office: IOffice): Promise<IOffice> {
-		const offices = this.getFromStorage();
-		const newOfficeObj: IOffice = {...office, id: Date.now()};
+	public static add(offices: IOffice[]): Promise<IOffice[]> {
+		const newOffices = this.getFromStorage().concat(offices)
 
-		offices.push(newOfficeObj);
-		this.setToStorage(offices);
+		this.setToStorage(newOffices);
 
-		return Promise.resolve(newOfficeObj);
+		return Promise.resolve(newOffices);
 	}
 
 	public static delete(id: number): Promise<any> {
@@ -28,14 +26,14 @@ export default class OfficesRestService {
 		return Promise.resolve({statusCode: 200});
 	}
 
-	public static edit(office: IOffice): Promise<IOffice> {
-		const offices = this.getFromStorage();
-		const officeIndex = findIndex(offices, {id: office.id});
+	public static edit(offices: IOffice[]): Promise<IOffice> {
+		const existingOffices = this.getFromStorage();
+		const officeIndex = findIndex(existingOffices, {id: offices[0].id});
 
-		offices.splice(officeIndex, this.DELETE_OFFICE_COUNT, office);
-		this.setToStorage(offices);
+		existingOffices.splice(officeIndex, this.DELETE_OFFICE_COUNT, offices[0]);
+		this.setToStorage(existingOffices);
 
-		return Promise.resolve(office);
+		return Promise.resolve(offices[0]);
 	}
 
 	private static getFromStorage(): IOffice[] {

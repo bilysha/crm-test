@@ -22,8 +22,18 @@ function OfficesListItem({item, translations}: any) {
 
 	return <div className="crm-offices-list-item">
 		<div className="crm-offices-list-item__actions">
-			<ButtonIcon title={translations['offices.list.item.action.edit']} onClick={onEditClicked}><MdEdit /></ButtonIcon>
-			<ButtonIcon title={translations['offices.list.item.action.delete']} onClick={() => setOfficeDeleteModalVisibility(true)}><IoMdTrash /></ButtonIcon>
+			<ButtonIcon
+				style={{marginBottom: '0.5rem'}}
+				title={translations['offices.list.item.action.edit']}
+				onClick={onEditClicked}>
+				<MdEdit />
+			</ButtonIcon>
+			<ButtonIcon
+				title={translations['offices.list.item.action.delete']}
+				onClick={() => setOfficeDeleteModalVisibility(true)}
+				accent="warn">
+				<IoMdTrash />
+			</ButtonIcon>
 		</div>
 		<div>
 			<div className="crm-offices-list-item__icon">

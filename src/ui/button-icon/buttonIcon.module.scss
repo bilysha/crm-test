@@ -8,6 +8,12 @@
             color: $dark-color-accent;
         }
     }
+
+    .accentWarn {
+        &:hover {
+            color: $color-error;
+        }
+    }
 }
 
 :root[data-theme="Light"] {
@@ -16,6 +22,12 @@
 
         &:hover {
             color: $dark-color-accent;
+        }
+    }
+
+    .accentWarn {
+        &:hover {
+            color: $color-error;
         }
     }
 }

@@ -1,5 +1,6 @@
 import {useFetching} from 'hooks/useFetching';
 import {useTranslation} from 'hooks/useTranslation';
+import {isEmpty} from 'lodash';
 import {useEffect, useState} from 'react';
 import Button from 'ui/button/button';
 import Loader from 'ui/loader/loader';
@@ -31,12 +32,12 @@ function Offices() {
 	const onAddNewOfficeClicked = () => {
 		setOfficeSlideoutVisibility(true);
 	};
-	const onOfficeSlideoutApplied = async (e: Event, office: IOffice) => {
+	const onOfficeSlideoutApplied = async (e: Event, offices: IOffice[]) => {
 		e.preventDefault();
-		if (office.id) {
-			await OfficesRestService.edit(office);
+		if (isEmpty(selectedOffice)) {
+			await OfficesRestService.add(offices);
 		} else {
-			await OfficesRestService.add(office);
+			await OfficesRestService.edit(offices);
 		}
 		closeOfficeSlideout();
 		fetchOffices();
