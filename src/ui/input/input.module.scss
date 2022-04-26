@@ -50,6 +50,11 @@
     max-width: 24rem;
 }
 
+.invalid {
+    box-shadow: 0 0 0.25rem 0 $color-error;
+    color: $color-error !important;
+}
+
 .input {
     border-radius: $border-radius-small;
     border: none;

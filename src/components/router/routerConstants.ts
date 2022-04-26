@@ -25,7 +25,9 @@ export const APP_ROUTES = {
 export const AUTHORIZATION_ROUTE = '/authorization';
 
 export const SIGN_IN_ROUTE = 'sign-in';
+export const SIGN_UP_ROUTE = 'sign-up';
 
 export const AUTHORIZATION_ROUTES = {
-	SIGN_IN: `${AUTHORIZATION_ROUTE}/${SIGN_IN_ROUTE}`
+	SIGN_IN: `${AUTHORIZATION_ROUTE}/${SIGN_IN_ROUTE}`,
+	SIGN_UP: `${AUTHORIZATION_ROUTE}/${SIGN_UP_ROUTE}`
 };

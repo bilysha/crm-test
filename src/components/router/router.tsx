@@ -1,5 +1,6 @@
 import Authorization from 'modules/authorization/authorization';
 import SignIn from 'modules/authorization/pages/sign-in/signIn';
+import SignUp from 'modules/authorization/pages/sign-up/signUp';
 import Base from 'modules/base/base';
 import Account from 'modules/base/pages/account/account';
 import Calendar from 'modules/base/pages/calendar/calendar';
@@ -27,13 +28,15 @@ import {
 	ORDERS_ROUTE,
 	SERVICES_ROUTE,
 	SETTINGS_ROUTE,
-	SIGN_IN_ROUTE
+	SIGN_IN_ROUTE,
+	SIGN_UP_ROUTE
 } from './routerConstants';
 
 function AppRouter() {
 	return <Routes>
 		<Route path={AUTHORIZATION_ROUTE} element={<Authorization />} >
 			<Route path={SIGN_IN_ROUTE} element={<SignIn />} />
+			<Route path={SIGN_UP_ROUTE} element={<SignUp />} />
 			<Route path="" element={<Navigate to={AUTHORIZATION_ROUTES.SIGN_IN} />} />
 		</Route>
 		<Route path={BASE_ROUTE} element={<Base />} >

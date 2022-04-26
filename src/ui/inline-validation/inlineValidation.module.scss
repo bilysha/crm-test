@@ -1,0 +1,6 @@
+@import "styles/variables.scss";
+
+.inlineValidationMessage {
+	font-size: $font-size-s;
+	color: $color-error;
+}
