@@ -1,12 +1,13 @@
 import {BASE_ROUTE} from 'components/router/routerConstants';
 import Button from 'ui/button/button';
 import Input from 'ui/input/input';
-import {useState} from 'react';
+import {useMemo, useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import './signUp.scss';
 import {useTranslation} from 'hooks/useTranslation';
 import {isUsernameValid} from 'utils/usernameUtils';
 import {isPasswordsMath, isPasswordValid} from 'utils/passwordUtils';
+import {each, some, values} from 'lodash';
 
 function SignUp() {
 	const defaultFormValue: {[key: string]: string} = {
@@ -18,7 +19,7 @@ function SignUp() {
 		username: null,
 		password: null,
 		confirmPassword: null,
-		passwordsMatch: null
+		passwordsMatch: true
 	};
 	const [formValue, setFormValue] = useState(defaultFormValue);
 	const [formValidation, setFormValidation] = useState(defaultFormValidation);
@@ -39,9 +40,11 @@ function SignUp() {
 			passwordsMath: isPasswordsMath(formValue.password, formValue.confirmPassword)
 		});
 	};
+	const isSubmitDisabled = useMemo(() => some(values(formValidation), (value) => !value), [formValidation]);
 
 	const onSubmit: any = (e: Event) => {
 		e.preventDefault();
+
 		navigate(BASE_ROUTE);
 	};
 
@@ -78,7 +81,7 @@ function SignUp() {
 						value={formValue.confirmPassword} />
 				</div>
 				<div className="crm-sign-up__form-actions">
-					<Button>{translations['sign.up.form.action.submit']}</Button>
+					<Button disabled={isSubmitDisabled ? 'disabled' : undefined}>{translations['sign.up.form.action.submit']}</Button>
 				</div>
 			</form>
 		</div>

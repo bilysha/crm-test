@@ -1,12 +1,13 @@
 import {BASE_ROUTE} from 'components/router/routerConstants';
 import Button from 'ui/button/button';
 import Input from 'ui/input/input';
-import {useState} from 'react';
+import {useMemo, useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import './signIn.scss';
 import {useTranslation} from 'hooks/useTranslation';
 import {isUsernameValid} from 'utils/usernameUtils';
 import {isPasswordValid} from 'utils/passwordUtils';
+import {some, values} from 'lodash';
 
 function SignIn() {
 	const defaultFormValue: {[key: string]: string} = {
@@ -32,6 +33,8 @@ function SignIn() {
 	const onPasswordFieldBlured = () => {
 		setFormValidation({...formValidation, password: isPasswordValid(formValue.password)});
 	};
+
+	const isSubmitDisabled = useMemo(() => some(values(formValidation), (value) => !value), [formValidation]);
 
 	const onSubmit: any = (e: Event) => {
 		e.preventDefault();
@@ -63,7 +66,7 @@ function SignIn() {
 						value={formValue.password} />
 				</div>
 				<div className="crm-sign-in__form-actions">
-					<Button>{translations['sign.in.form.action.submit']}</Button>
+					<Button disabled={isSubmitDisabled ? 'disabled' : undefined}>{translations['sign.in.form.action.submit']}</Button>
 				</div>
 			</form>
 		</div>

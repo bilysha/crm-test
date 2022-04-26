@@ -4,6 +4,10 @@
     .primary {
         color: $dark-color-text;
         background-color: $dark-color-accent;
+
+        &:hover {
+            background-color: $dark-color-accent-hover;
+        }
     }
 
     .secondary {
@@ -40,12 +44,20 @@
             background-color: $dark-color-secondary;
         }
     }
+
+    .button:disabled {
+        background-color: $dark-color-disabled;
+    }
 }
 
 :root[data-theme="Light"] {
     .primary {
         color: $color-white;
         background-color: $light-color-accent;
+
+        &:hover {
+            background-color: $light-color-accent-hover;
+        }
     }
 
     .secondary {
@@ -81,6 +93,10 @@
         &:hover {
             background-color: $light-color-secondary;
         }
+    }
+
+    .button:disabled {
+        background-color: $light-color-disabled;
     }
 }
 

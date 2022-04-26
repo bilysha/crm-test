@@ -20,18 +20,21 @@ $font-size-xs: 0.5rem;
 // dark theme
 $dark-color-primary: #1b1b1b;
 $dark-color-secondary: #2b2b2b;
-$dark-color-accent: #D4A056;
+$dark-color-accent: #f5a93f;
+$dark-color-accent-hover: #f5a93fe1;
 $dark-color-text: #FFFFFF;
+$dark-color-disabled: #555555;
 
 //light theme
 $light-color-primary: #ececec;
 $light-color-secondary: #ffffff;
-$light-color-accent: #D4A056;
+$light-color-accent: #f5a93f;
+$light-color-accent-hover: #f5a93fe1;
 $light-color-text: #414141;
+$light-color-disabled: #808080;
 
 $color-error: #e74343;
 $color-white: #fff;
-$text-color-base: #808080;
 
 // #09C0FA - try as dark accent color
 // #171C26 - try as dark primary color
