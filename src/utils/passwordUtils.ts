@@ -6,6 +6,8 @@ export const isPasswordValid = (password: string): boolean => {
 	return size(password) >= MIN_PASSWORD_LENGTH;
 };
 
-export const isPasswordsMath = (password1: string, password2: string): boolean | null => {
-	return size(password1) > 0 && size(password2) > 0 ? password1 === password2 : null;
+export const isPasswordsMatchValid = (password1: string, password2: string): boolean | null => {
+	console.log('result: ', isPasswordValid(password1) && isPasswordValid(password2) ? password1 === password2 : null);
+	
+	return isPasswordValid(password1) && isPasswordValid(password2) ? password1 === password2 : null;
 }
