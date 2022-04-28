@@ -1,0 +1,53 @@
+@import "styles/variables.scss";
+
+:root[data-theme="Dark"] {
+    .primary {
+        color: $dark-color-text;
+
+        &:hover {
+            color: $dark-color-accent;
+        }
+    }
+
+    .accent {
+        color: $dark-color-accent;
+
+        &:hover {
+            color: $dark-color-accent-hover;
+        }
+    }
+}
+
+:root[data-theme="Light"] {
+    .primary {
+        color: $light-color-text;
+
+        &:hover {
+            color: $dark-color-accent;
+        }
+    }
+
+    .accent {
+        color: $light-color-accent;
+
+        &:hover {
+            color: $light-color-accent-hover;
+        }
+    }
+}
+
+.small {
+    font-size: $font-size-s;
+}
+
+.regular {
+    font-size: $font-size-m;
+}
+
+.buttonLink {
+    border: none;
+    background-color: transparent;
+    text-decoration: underline;
+    margin: 0;
+    padding: 0;
+}

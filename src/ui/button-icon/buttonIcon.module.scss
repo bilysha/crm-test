@@ -9,9 +9,17 @@
         }
     }
 
-    .accentWarn {
+    .warn {
         &:hover {
             color: $color-error;
+        }
+    }
+
+    .error {
+        color: $color-error;
+
+        &:hover {
+            color: $dark-color-text;
         }
     }
 }
@@ -25,9 +33,17 @@
         }
     }
 
-    .accentWarn {
+    .warn {
         &:hover {
             color: $color-error;
+        }
+    }
+
+    .error {
+        color: $color-error;
+
+        &:hover {
+            color: $light-color-text;
         }
     }
 }

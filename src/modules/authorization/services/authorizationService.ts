@@ -5,15 +5,16 @@ export default class AuthorizationService {
 	protected static SIGN_UP_REST: string = 'api/crm/registration/';
 	protected static SIGN_IN_REST: string = 'api/custom_auth/auth/basic/';
 
-	public static signUp(username: string, password: string): Promise<any> {
+	public static signUp({username, password, firstName, lastName}: any): Promise<any> {
 		return axios.post(
 			`${this.DOMAIN}/${this.SIGN_UP_REST}`,
 			{
+				first_name: firstName,
+				last_name: lastName,
 				email: username,
 				password
 			}
 		)
-			.catch((e) => {throw Error(e);});
 	}
 
 	public static signIn(username: string, password: string): Promise<any> {
@@ -24,6 +25,5 @@ export default class AuthorizationService {
 				password
 			}
 		)
-			.catch((e) => {throw Error(e);});
 	}
 }

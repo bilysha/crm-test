@@ -1,0 +1,33 @@
+@import "styles/variables.scss";
+
+:root[data-theme="Dark"] {
+    .messageInpage {
+        color: $dark-color-text;
+    }
+}
+
+:root[data-theme="Light"] {
+    .messageInpage {
+        color: $light-color-text;
+    }
+}
+
+.messageInpageContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.messageInpage {
+    border: 2px solid $color-error;
+    border-radius: $border-radius-small;
+    margin-top: $sizing-m;
+    padding: $sizing-s;
+    background-color: rgba(253, 100, 100, 0.253);
+    display: flex;
+    align-items: flex-start;
+}
+
+.message {
+    display: block;
+}
