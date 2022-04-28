@@ -1,7 +1,7 @@
 import {AUTHORIZATION_ROUTES, BASE_ROUTE} from 'components/router/routerConstants';
 import Button from 'ui/button/button';
 import Input from 'ui/input/input';
-import {useMemo, useState} from 'react';
+import {useMemo, useReducer, useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import './signIn.scss';
 import {useTranslation} from 'hooks/useTranslation';
@@ -12,6 +12,9 @@ import AuthorizationService from 'modules/authorization/services/authorizationSe
 import Loader from 'ui/loader/loader';
 import ButtonLink from 'ui/button-link/buttonLink';
 import MessageInpage from 'ui/message-inpage/messageInpage';
+import InputCheckbox from 'ui/input-checkbox/inputCheckbox';
+import LangToggle from 'ui/lang-toggle/langToggle';
+import ThemeToggle from 'ui/theme-toggle/themeToggle';
 
 function SignIn() {
 	const defaultFormValue: {[key: string]: string} = {
@@ -22,16 +25,19 @@ function SignIn() {
 		username: null,
 		password: null
 	};
+	const [rememberMe, toggleRememberMe] = useReducer((remember: boolean) => !remember, false);
+	const [translations, translationsLoading] = useTranslation({path: 'sign-in', filename: 'sign-in'});
 	const [formValue, setFormValue] = useState(defaultFormValue);
 	const [formValidation, setFormValidation] = useState(defaultFormValidation);
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState({} as any);
 	const navigate = useNavigate();
 
-	const [translations, translationsLoading] = useTranslation({path: 'sign-in', filename: 'sign-in'});
+	const isSubmitDisabled = useMemo(() => some(values(formValidation), (value) => !value), [formValidation]);
 
 	const onFormFieldUpdated = (value: string, key: string) => {
 		setFormValue({...formValue, [key]: value});
+		setFormValidation({...formValidation, [key]: true});
 	};
 	const onUsernameFieldBlured = () => {
 		setFormValidation({...formValidation, username: isUsernameValid(formValue.username)});
@@ -39,15 +45,15 @@ function SignIn() {
 	const onPasswordFieldBlured = () => {
 		setFormValidation({...formValidation, password: isPasswordValid(formValue.password)});
 	};
-
 	const onCreateAccountClicked = () => {
 		navigate(AUTHORIZATION_ROUTES.SIGN_UP);
 	};
-
-	const isSubmitDisabled = useMemo(() => some(values(formValidation), (value) => !value), [formValidation]);
-
-	const onSubmit: any = async (e: Event) => {
+	const onForgotPasswordClicked = () => {
+		navigate(AUTHORIZATION_ROUTES.FORGOT_PASSWORD);
+	};
+	const onSubmit = async (e: any) => {
 		e.preventDefault();
+		setError({});
 
 		try {
 			setLoading(true);
@@ -65,9 +71,24 @@ function SignIn() {
 			loading || translationsLoading
 				? <div className="crm-sign-in__laoder-container"><Loader /></div>
 				: <>
-					<div>
+					<div className="crm-sign-in__top">
+						<div className="crm-sign-in__top-section">
+							<div className="crm-sign-in__top-section__action">
+								<LangToggle />
+							</div>
+							<div className="crm-sign-in__top-section__action">
+								<ThemeToggle />
+							</div>
+						</div>
+						<div className="crm-sign-in__top-section">
+							<div className="crm-sign-in__top-section__action">
+								<ButtonLink theme="accent">{translations['sign.in.need.help.button']}</ButtonLink>
+							</div>
+						</div>
+					</div>
+					<div className="crm-sign-in__middle">
 						<div className="crm-sign-in__heading">
-							<h2>{translations['sign.in.heading']}</h2>
+							<p>{translations['sign.in.heading']}</p>
 						</div>
 						<MessageInpage messages={error.messages} condition={!isEmpty(error)} setCondition={setError} />
 						<div className="crm-sign-in__form">
@@ -79,27 +100,32 @@ function SignIn() {
 										onChange={(e: any) => onFormFieldUpdated(e.target.value, 'username')}
 										onBlur={onUsernameFieldBlured}
 										invalid={formValidation.username === false}
+										placeholder={translations['sign.in.form.username.placeholder']}
 										invalidMessage={translations['sign.in.form.validation.username.invalid.format']}
 										value={formValue.username} />
 									<Input
-										containerStyle={{marginBottom: '0'}}
 										label={translations['sign.in.form.password']}
 										type="password"
 										onChange={(e: any) => onFormFieldUpdated(e.target.value, 'password')}
 										onBlur={onPasswordFieldBlured}
 										invalid={formValidation.password === false}
+										placeholder={translations['sign.in.form.password.placeholder']}
 										invalidMessage={translations['sign.in.form.validation.password.invalid.length']}
 										value={formValue.password} />
-									<ButtonLink size="small">Forgot password?</ButtonLink>
+									<div className="crm-sign-in__form-content__row">
+										<InputCheckbox label={translations['sign.in.form.remember.me']} id="rememberMeCheckbox" value={rememberMe} onChange={toggleRememberMe} />
+										<ButtonLink theme="accent" onClick={onForgotPasswordClicked}>{translations['sign.in.forgot.password.button']}</ButtonLink>
+									</div>
 								</div>
 								<div className="crm-sign-in__form-actions">
-									<Button disabled={isSubmitDisabled ? 'disabled' : undefined}>{translations['sign.in.form.action.submit']}</Button>
+									<Button size="large" disabled={isSubmitDisabled ? 'disabled' : undefined}>{translations['sign.in.form.action.submit']}</Button>
 								</div>
 							</form>
 						</div>
 					</div>
-					<div className="crm-sign-in__create-acc">
-						<ButtonLink theme="accent" onClick={onCreateAccountClicked}>Create an account</ButtonLink>
+					<div className="crm-sign-in__bottom">
+						<p>{translations['sign.in.create.account.tip']}</p>
+						<ButtonLink theme="accent" onClick={onCreateAccountClicked}>{translations['sign.in.create.account.button']}</ButtonLink>
 					</div>
 				</>
 		}

@@ -2,15 +2,15 @@
 
 :root[data-theme="Dark"] {
     .loaderRing div {
-        border: 8px solid $dark-color-text;
-        border-color: $dark-color-text transparent transparent transparent;
+        border-color: $dark-color-accent;
+        border-color: $dark-color-accent transparent transparent transparent;
     }
 }
 
 :root[data-theme="Light"] {
     .loaderRing div {
-        border: 8px solid $light-color-text;
-        border-color: $light-color-text transparent transparent transparent;
+        border-color: $light-color-accent;
+        border-color: $light-color-accent transparent transparent transparent;
     }
 }
 
@@ -32,6 +32,7 @@
     height: 80px;
 
     div {
+        border: 8px solid;
         box-sizing: border-box;
         display: block;
         position: absolute;

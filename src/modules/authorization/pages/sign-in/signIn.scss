@@ -2,13 +2,13 @@
 
 :root[data-theme="Dark"] {
     .crm-sign-in__heading {
-        border-bottom: 2px solid $dark-color-primary;
+        color: $dark-color-text;
     }
 }
 
 :root[data-theme="Light"] {
     .crm-sign-in__heading {
-        border-bottom: 2px solid $light-color-primary;
+        color: $light-color-text;
     }
 }
 
@@ -18,7 +18,22 @@
     flex-direction: column;
     justify-content: space-between;
     position: relative;
-    padding-bottom: $sizing-xl;
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+
+        &-section {
+            display: flex;
+            align-items: center;
+
+            &__action:not(:last-child) {
+                padding-right: $sizing-s;
+                border-right: 1px solid #ccc;
+                margin-right: $sizing-s;
+            }
+        }
+    }
 
     &__loader-container {
         position: absolute;
@@ -29,9 +44,11 @@
     }
 
     &__heading {
-        padding-bottom: $sizing-m;
+        text-align: center;
+        color: $light-color-text;
+        font-weight: 700;
 
-        h2 {
+        p {
             margin: 0;
         }
     }
@@ -42,6 +59,27 @@
         &-actions {
             display: flex;
             justify-content: flex-end;
+        }
+
+        &-content {
+            padding-bottom: $sizing-m;
+            margin-bottom: $sizing-m;
+
+            &__row {
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        p {
+            margin: 0;
+            margin-right: $sizing-s;
         }
     }
 }

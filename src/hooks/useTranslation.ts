@@ -24,6 +24,7 @@ const fetchData = async (setLoading: any, setTranslations: any, lang: any, optio
 	setLoading(true);
 
 	try {
+		await new Promise((resolve) => setTimeout(() => resolve({}), 1000));
 		const properties = await fetch(`${process.env.PUBLIC_URL}/translations/${options.path}/${options.filename}_${isEqual(lang, LANGS.RUS) ? 'ru' : 'en'}.properties`)
 			.then(resp => resp.text())
 			.then(data => parseDataFromFile(data));

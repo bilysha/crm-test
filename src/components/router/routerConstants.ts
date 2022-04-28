@@ -26,8 +26,10 @@ export const AUTHORIZATION_ROUTE = '/authorization';
 
 export const SIGN_IN_ROUTE = 'sign-in';
 export const SIGN_UP_ROUTE = 'sign-up';
+export const FORGOT_PASSWORD_ROUTE = 'forgot-password';
 
 export const AUTHORIZATION_ROUTES = {
 	SIGN_IN: `${AUTHORIZATION_ROUTE}/${SIGN_IN_ROUTE}`,
-	SIGN_UP: `${AUTHORIZATION_ROUTE}/${SIGN_UP_ROUTE}`
+	SIGN_UP: `${AUTHORIZATION_ROUTE}/${SIGN_UP_ROUTE}`,
+	FORGOT_PASSWORD: `${AUTHORIZATION_ROUTE}/${FORGOT_PASSWORD_ROUTE}`
 };

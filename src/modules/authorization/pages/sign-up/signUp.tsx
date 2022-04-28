@@ -13,6 +13,8 @@ import Loader from 'ui/loader/loader';
 import ButtonLink from 'ui/button-link/buttonLink';
 import {isNameValid} from 'utils/namesUtils';
 import MessageInpage from 'ui/message-inpage/messageInpage';
+import LangToggle from 'ui/lang-toggle/langToggle';
+import ThemeToggle from 'ui/theme-toggle/themeToggle';
 
 function SignUp() {
 	const defaultFormValue: {[key: string]: string} = {
@@ -62,6 +64,7 @@ function SignUp() {
 
 	const onSubmit = async (e: any): Promise<void> => {
 		e.preventDefault();
+		setError({});
 
 		try {
 			setLoading(true);
@@ -79,9 +82,24 @@ function SignUp() {
 			loading || translationsLoading
 				? <div className="crm-sign-up__loader-container"><Loader /></div>
 				: <>
-					<div>
+					<div className="crm-sign-up__top">
+					<div className="crm-sign-up__top-section">
+							<div className="crm-sign-up__top-section__action">
+								<LangToggle />
+							</div>
+							<div className="crm-sign-up__top-section__action">
+								<ThemeToggle />
+							</div>
+						</div>
+						<div className="crm-sign-up__top-section">
+							<div className="crm-sign-up__top-section__action">
+								<ButtonLink theme="accent">{translations['sign.up.need.help.button']}</ButtonLink>
+							</div>
+						</div>
+					</div>
+					<div className="crm-sign-up__middle">
 						<div className="crm-sign-up__heading">
-							<h2>{translations['sign.up.heading']}</h2>
+							<p>{translations['sign.up.heading']}</p>
 						</div>
 						<MessageInpage messages={error.messages} condition={!isEmpty(error)} setCondition={setError} />
 						<div className="crm-sign-up__form">
@@ -91,6 +109,7 @@ function SignUp() {
 										<div className="crm-sign-up__form-content__row-item">
 											<Input
 												label={translations['sign.up.form.firstName']}
+												placeholder={translations['sign.up.form.firstName.placeholder']}
 												type="text"
 												onChange={(e: any) => onFormFieldUpdated(e.target.value, 'firstName')}
 												onBlur={() => onNameFieldBlured('firstName')}
@@ -101,6 +120,7 @@ function SignUp() {
 										<div className="crm-sign-up__form-content__row-item">
 											<Input
 												label={translations['sign.up.form.lastName']}
+												placeholder={translations['sign.up.form.lastName.placeholder']}
 												type="text"
 												onChange={(e: any) => onFormFieldUpdated(e.target.value, 'lastName')}
 												onBlur={() => onNameFieldBlured('lastName')}
@@ -111,6 +131,7 @@ function SignUp() {
 									</div>
 									<Input
 										label={translations['sign.up.form.username']}
+										placeholder={translations['sign.up.form.username.placeholder']}
 										type="text"
 										onChange={(e: any) => onFormFieldUpdated(e.target.value, 'username')}
 										onBlur={onUsernameFieldBlured}
@@ -119,6 +140,7 @@ function SignUp() {
 										value={formValue.username} />
 									<Input
 										label={translations['sign.up.form.password']}
+										placeholder={translations['sign.up.form.password.placeholder']}
 										type="password"
 										onChange={(e: any) => onFormFieldUpdated(e.target.value, 'password')}
 										onBlur={() => onPasswordFieldBlured('password')}
@@ -127,6 +149,7 @@ function SignUp() {
 										value={formValue.password} />
 									<Input
 										label={translations['sign.up.form.password.confirm']}
+										placeholder={translations['sign.up.form.password.confirm.placeholder']}
 										type="password"
 										onChange={(e: any) => onFormFieldUpdated(e.target.value, 'confirmPassword')}
 										onBlur={() => onPasswordFieldBlured('confirmPassword')}
@@ -135,13 +158,14 @@ function SignUp() {
 										value={formValue.confirmPassword} />
 								</div>
 								<div className="crm-sign-up__form-actions">
-									<Button disabled={isSubmitDisabled ? 'disabled' : undefined}>{translations['sign.up.form.action.submit']}</Button>
+									<Button size="large" disabled={isSubmitDisabled ? 'disabled' : undefined}>{translations['sign.up.form.action.submit']}</Button>
 								</div>
 							</form>
 						</div>
 					</div>
-					<div className="crm-sign-in__create-acc">
-						<ButtonLink theme="accent" onClick={onNavigateToSignInClicked}>Already have an account?</ButtonLink>
+					<div className="crm-sign-in__bottom">
+						<p>{translations['sign.up.have.account.tip']}</p>
+						<ButtonLink theme="accent" onClick={onNavigateToSignInClicked}>{translations['sign.up.have.account.button']}</ButtonLink>
 					</div>
 				</>
 		}

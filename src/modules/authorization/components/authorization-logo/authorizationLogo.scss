@@ -1,0 +1,24 @@
+@import "styles/variables.scss";
+
+.crm-authorization-logo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 5rem;
+	height: 5rem;
+	background-color: transparent;
+	border-radius: $border-radius-small;
+	background-color: $color-white;
+
+	&__text-accent {
+		color: $light-color-accent;
+		font-size: 3rem;
+		font-weight: bold;
+	}
+
+	&__text {
+		color: $light-color-text;
+		font-weight: bold;
+		font-size: 3rem;
+	}
+}

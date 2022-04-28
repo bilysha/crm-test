@@ -1,4 +1,5 @@
 import Authorization from 'modules/authorization/authorization';
+import ForgotPassword from 'modules/authorization/pages/forgot-password/forgotPassword';
 import SignIn from 'modules/authorization/pages/sign-in/signIn';
 import SignUp from 'modules/authorization/pages/sign-up/signUp';
 import Base from 'modules/base/base';
@@ -24,6 +25,7 @@ import {
 	CALENDAR_ROUTE,
 	CLIENTS_ROUTE,
 	DASHBOARD_ROUTE,
+	FORGOT_PASSWORD_ROUTE,
 	OFFICES_ROUTE,
 	ORDERS_ROUTE,
 	SERVICES_ROUTE,
@@ -37,6 +39,7 @@ function AppRouter() {
 		<Route path={AUTHORIZATION_ROUTE} element={<Authorization />} >
 			<Route path={SIGN_IN_ROUTE} element={<SignIn />} />
 			<Route path={SIGN_UP_ROUTE} element={<SignUp />} />
+			<Route path={FORGOT_PASSWORD_ROUTE} element={<ForgotPassword />} />
 			<Route path="" element={<Navigate to={AUTHORIZATION_ROUTES.SIGN_IN} />} />
 		</Route>
 		<Route path={BASE_ROUTE} element={<Base />} >

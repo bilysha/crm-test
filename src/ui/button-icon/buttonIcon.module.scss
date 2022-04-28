@@ -1,7 +1,7 @@
 @import "styles/variables.scss";
 
 :root[data-theme="Dark"] {
-    .buttonIcon {
+    .regular {
         color: $dark-color-text;
 
         &:hover {
@@ -25,11 +25,11 @@
 }
 
 :root[data-theme="Light"] {
-    .buttonIcon {
+    .regular {
         color: $light-color-text;
 
         &:hover {
-            color: $dark-color-accent;
+            color: $light-color-accent;
         }
     }
 

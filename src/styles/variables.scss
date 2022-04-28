@@ -20,18 +20,20 @@ $font-size-xs: 0.5rem;
 // dark theme
 $dark-color-primary: #1b1b1b;
 $dark-color-secondary: #2b2b2b;
-$dark-color-accent: #f5a93f;
-$dark-color-accent-hover: #f5a93fe1;
+$dark-color-accent: #6788ff;
+$dark-color-accent-hover: #5479fa;
 $dark-color-text: #FFFFFF;
+$dark-color-label-text: #cccccc;
 $dark-color-disabled: #555555;
 
 //light theme
 $light-color-primary: #fafafa;
-$light-color-secondary: #eeeeee;
-$light-color-accent: #f5a93f;
-$light-color-accent-hover: #f5a93fe1;
+$light-color-secondary: #e8ecf5;
+$light-color-accent: #6788ff;
+$light-color-accent-hover: #5479fa;
 $light-color-text: #2c2c2c;
-$light-color-disabled: #808080;
+$light-color-label-text: #808080;
+$light-color-disabled: #cccccc;
 
 $color-error: #e74343;
 $color-white: #fff;

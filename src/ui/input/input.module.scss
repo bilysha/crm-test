@@ -1,34 +1,32 @@
 @import "styles/variables.scss";
 
 :root[data-theme="Dark"] {
-    .inputContainer {
-        color: $dark-color-text;
-    }
-
-    .primary {
-        color: $dark-color-text;
+    .inputWrapper {
         background-color: $dark-color-primary;
     }
 
-    .secondary {
-        color: $dark-color-text;
-        background-color: $dark-color-secondary;
+    .input::placeholder {
+        color: #bebebe;
+    }
+
+    .label,
+    .input {
+        color: $dark-color-label-text;
     }
 }
 
 :root[data-theme="Light"] {
-    .inputContainer {
-        color: $light-color-text;
-    }
-
-    .primary {
-        color: $light-color-text;
+    .inputWrapper {
         background-color: $light-color-primary;
     }
 
-    .secondary {
-        color: $light-color-text;
-        background-color: $light-color-secondary;
+    .label,
+    .input {
+        color: $light-color-label-text;
+    }
+
+    .input::placeholder {
+        color: #ccc;
     }
 }
 
@@ -40,6 +38,7 @@
 
 .label {
     margin-bottom: $sizing-s;
+    font-weight: normal;
 }
 
 .normal {
@@ -51,16 +50,23 @@
 }
 
 .invalid {
-    box-shadow: 0 0 0.25rem 0 $color-error;
+    border-color: $color-error !important;
     color: $color-error !important;
 }
 
-.input {
+.inputWrapper {
     border-radius: $border-radius-small;
+    padding: 0 $sizing-xs;
+}
+
+.input {
     border: none;
-    padding: $sizing-xs $sizing-m;
+    background-color: transparent;
     min-width: 1rem;
     width: 100%;
+    padding: $sizing-m;
+    padding-left: $sizing-s;
+    border-bottom: 2px solid transparent;
 
     &:focus {
         outline: none;
@@ -69,4 +75,8 @@
     [type="date"] {
         max-width: 5rem;
     }
+}
+
+.validationContainer {
+    min-height: $sizing-m;
 }

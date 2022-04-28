@@ -1,20 +1,18 @@
 import {Outlet} from 'react-router-dom';
 import './authorization.scss';
-import LangToggle from '../../ui/lang-toggle/langToggle';
-import ThemeToggle from '../../ui/theme-toggle/themeToggle';
 
 function Authorization() {
 	return <div className="crm-authorization">
 		<div className="crm-authorization__container">
 			<div className="crm-authorization__container-content">
-				<Outlet />
-			</div>
-			<div className="crm-authorization__container-actions">
-				<div className="crm-authorization__container-actions__action">
-					<LangToggle />
+				<div className="crm-authorization__container-content__inner content-center">
+					<p className="crm-authorization__message crm-authorization__message-large">Join Our Community</p>
+					<p className="crm-authorization__message">Beauty CRM - here should be a reklamny slogan in order to motivate people to use this application.</p>
 				</div>
-				<div className="crm-authorization__container-actions__action">
-					<ThemeToggle />
+			</div>
+			<div className="crm-authorization__container-content">
+				<div className="crm-authorization__container-content__inner">
+					<Outlet />
 				</div>
 			</div>
 		</div>

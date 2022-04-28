@@ -109,6 +109,11 @@
     justify-content: center;
 }
 
+.large {
+    width: 100%;
+    padding: $sizing-m;
+}
+
 .secondary {
     border: 1px solid;
 }
