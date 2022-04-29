@@ -18,8 +18,8 @@ import ThemeToggle from 'ui/theme-toggle/themeToggle';
 
 function SignIn() {
 	const defaultFormValue: {[key: string]: string} = {
-		username: '',
-		password: ''
+		username: 'ilya1@gmail.com',
+		password: 'qwerQWER1'
 	};
 	const defaultFormValidation: {[key: string]: boolean | null} = {
 		username: null,

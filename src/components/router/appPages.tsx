@@ -6,6 +6,7 @@ import {BiUser} from '@react-icons/all-files/bi/BiUser';
 import {FiSettings} from '@react-icons/all-files/fi/FiSettings';
 import {BsCalendar} from '@react-icons/all-files/bs/BsCalendar';
 import {BiBuildings} from '@react-icons/all-files/bi/BiBuildings';
+import {BiHelpCircle} from '@react-icons/all-files/bi/BiHelpCircle'
 import {APP_ROUTES} from './routerConstants';
 
 export const APP_PAGES = [
@@ -56,5 +57,11 @@ export const APP_PAGES = [
 		menuKey: 'main.menu.option.settings',
 		path: APP_ROUTES.SETTINGS,
 		icon: <FiSettings />
+	},
+	{
+		titleKey: 'page.heading.help',
+		menuKey: 'main.menu.option.help',
+		path: APP_ROUTES.HELP,
+		icon: <BiHelpCircle />
 	}
 ];

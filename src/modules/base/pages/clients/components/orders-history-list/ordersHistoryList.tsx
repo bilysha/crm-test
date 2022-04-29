@@ -4,18 +4,13 @@ import './ordersHistoryList.scss';
 
 function OrdersHistoryList() {
 	const {selectedClient} = useContext(ClientsContext);
-	const orders = useMemo(() => {
-		const array = new Array(getRandomInt(5, 15)).fill({});
-		console.log(array);
-
-		return array;
-	}, [selectedClient]);
+	const orders = useMemo(() => new Array(getRandomInt(5, 15)).fill({}), [selectedClient]);
 
 	function getRandomInt(min: number, max: number) {
 		min = Math.ceil(min);
 		max = Math.floor(max);
 		return Math.floor(Math.random() * (max - min)) + min;
-	  }
+	}
 
 	return <ul className="crm-client-orders-history__list">
 		{

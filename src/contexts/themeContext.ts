@@ -1,8 +1,10 @@
 import {createContext} from 'react';
 
-export const THEMES = {
+import {IThemes, IThemeContext} from 'models/theme.interfaces';
+
+export const THEMES: IThemes = {
 	DARK: 'Dark',
 	LIGHT: 'Light'
 };
 
-export const ThemeContext = createContext({} as any);
+export const ThemeContext = createContext({} as IThemeContext);

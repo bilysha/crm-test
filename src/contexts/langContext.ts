@@ -1,6 +1,8 @@
 import {createContext} from 'react';
 
-export const LANGS = {
+import {ILangContext, ILangs} from 'models/lang.interfaces';
+
+export const LANGS: ILangs = {
 	ENG: {
 		displayValue: 'Eng',
 		code: 'en'
@@ -11,4 +13,4 @@ export const LANGS = {
 	}
 };
 
-export const LangContext = createContext({} as any);
+export const LangContext = createContext({} as ILangContext);

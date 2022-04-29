@@ -6,12 +6,12 @@
     }
 
     .crmSlideoutInner {
-        background-color: $dark-color-secondary;
+        background-color: $dark-color-primary;
     }
 
     .crmSlideoutHeading {
         color: $dark-color-text;
-        border-color: $dark-color-primary;
+        border-color: $dark-color-secondary;
     }
 }
 
@@ -21,12 +21,12 @@
     }
 
     .crmSlideoutInner {
-        background-color: $light-color-secondary;
+        background-color: $light-color-primary;
     }
 
     .crmSlideoutHeading {
         color: $light-color-text;
-        border-color: $light-color-primary;
+        border-color: $light-color-secondary;
     }
 }
 

@@ -10,19 +10,6 @@
                 border-bottom: 2px solid $dark-color-secondary;
             }
         }
-
-        &__nav-list.user-options {
-            background-color: $dark-color-secondary;
-        }
-
-        &__logout-button {
-            color: $color-error;
-
-            &:hover,
-            &:focus {
-                background-color: #4d2b2b;
-            }
-        }
     }
 }
 
@@ -36,19 +23,6 @@
                 border-bottom: 2px solid $light-color-secondary;
             }
         }
-
-        &__nav-list.user-options {
-            background-color: $light-color-secondary;
-        }
-
-        &__logout-button {
-            color: $color-error;
-
-            &:hover,
-            &:focus {
-                background-color: #e9c3c3;
-            }
-        }
     }
 }
 
@@ -60,9 +34,9 @@
     padding-bottom: $sizing-m;
 
     &__logo {
-        border-radius: 50%;
-        width: 3rem;
-        height: 3rem;
+        border-radius: $border-radius-small;
+        width: 2.5rem;
+        height: 2.5rem;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -70,8 +44,7 @@
         font-weight: bold;
 
         &-container {
-            padding-top: 0.8rem;
-            padding-bottom: 1.25rem;
+            padding-bottom: $sizing-m;
         }
     }
 
@@ -103,16 +76,13 @@
                     margin-bottom: $sizing-m;
                 }
             }
-
-            &.user-options {
-                padding: $sizing-xs;
-                border-radius: 2rem;
-            }
         }
     }
 
-    &__logout {
+    &__footer {
         display: flex;
+        flex-direction: column;
+        align-items: center;
         justify-content: center;
 
         &-button {
@@ -120,11 +90,20 @@
             align-items: center;
             justify-content: center;
             border: none;
-            border-radius: 50%;
+            border-radius: $border-radius-small;
             background-color: transparent;
             font-size: $font-size-l;
             padding: $sizing-s;
-            margin: 0;
+            margin-bottom: $sizing-s;
+
+            &:hover {
+                color: $light-color-accent;
+
+                &:hover,
+                &:focus {
+                    background-color: $light-color-secondary;
+                }
+            }
         }
     }
 }

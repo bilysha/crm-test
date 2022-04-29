@@ -11,10 +11,6 @@
         &__main-heading {
             color: $dark-color-text;
             border-bottom: 2px solid $dark-color-secondary;
-
-            &-actions__action:not(:last-child) {
-                border-right: 2px solid $dark-color-secondary;
-            }
         }
     }
 }
@@ -30,10 +26,6 @@
         &__main-heading {
             color: $light-color-text;
             border-bottom: 2px solid $light-color-secondary;
-
-            &-actions__action:not(:last-child) {
-                border-right: 2px solid $light-color-secondary;
-            }
         }
     }
 }
@@ -62,14 +54,18 @@
             justify-content: space-between;
             align-items: center;
 
+            h1 {
+                margin: 0;
+            }
+
             &-actions {
                 display: flex;
                 align-items: center;
                 justify-content: flex-end;
+                padding: $sizing-s $sizing-m;
 
                 &__action:not(:last-child) {
                     margin-right: $sizing-m;
-                    padding-right: $sizing-m;
                 }
             }
         }

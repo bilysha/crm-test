@@ -33,7 +33,6 @@ const fetchData = async (setLoading: any, setTranslations: any, lang: any, optio
 	} catch {
 
 	} finally {
-		console.log('loading');
 		setLoading(false);
 	};
 }

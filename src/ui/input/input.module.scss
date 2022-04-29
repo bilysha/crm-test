@@ -1,8 +1,12 @@
 @import "styles/variables.scss";
 
 :root[data-theme="Dark"] {
-    .inputWrapper {
+    .primary {
         background-color: $dark-color-primary;
+    }
+
+    .inputWrapper.secondary {
+        background-color: $dark-color-secondary;
     }
 
     .input::placeholder {
@@ -16,8 +20,12 @@
 }
 
 :root[data-theme="Light"] {
-    .inputWrapper {
+    .inputWrapper.primary {
         background-color: $light-color-primary;
+    }
+
+    .inputWrapper.secondary {
+        background-color: $light-color-secondary;
     }
 
     .label,

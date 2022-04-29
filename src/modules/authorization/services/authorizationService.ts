@@ -25,5 +25,9 @@ export default class AuthorizationService {
 				password
 			}
 		)
+			.then(resp => {
+				console.log(resp);
+				return resp;
+			})
 	}
 }

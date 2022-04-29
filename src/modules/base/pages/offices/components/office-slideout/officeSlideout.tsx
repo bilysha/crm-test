@@ -75,28 +75,34 @@ function OfficeSlideout({setVisibility, translations, onCancel, onApply}: any) {
 									}
 									<Input
 										value={formValue.name}
+										uiStyle="secondary"
 										onChange={(e: any) => onFormFieldChange(index, 'name', e.target.value)}
 										label={translations['office.slideout.label.name']} />
 									<Input
 										value={formValue.address.street}
+										uiStyle="secondary"
 										onChange={(e: any) => onFormFieldChange(index, 'address.street', e.target.value)}
 										label={translations['office.slideout.label.street']} />
 									<div className="crm-office-form__item__row-combined">
 										<Input
 											value={formValue.address.house}
+											uiStyle="secondary"
 											onChange={(e: any) => onFormFieldChange(index, 'address.house', e.target.value)}
 											label={translations['office.slideout.label.house']} />
 										<Input
 											value={formValue.address.building}
+											uiStyle="secondary"
 											onChange={(e: any) => onFormFieldChange(index, 'address.building', e.target.value)}
 											label={translations['office.slideout.label.building']} />
 										<Input
 											value={formValue.address.room}
+											uiStyle="secondary"
 											onChange={(e: any) => onFormFieldChange(index, 'address.room', e.target.value)}
 											label={translations['office.slideout.label.room']} />
 									</div>
 									<Textarea
 										value={formValue.comment}
+										uiStyle="secondary"
 										onChange={(e: any) => onFormFieldChange(index, 'comment', e.target.value)}
 										label={translations['office.slideout.label.comment']} />
 								</div>
@@ -104,7 +110,7 @@ function OfficeSlideout({setVisibility, translations, onCancel, onApply}: any) {
 						}
 					</form>
 				}
-				{!isEdit && <Button onClick={addOfficeItem} theme="dashedPrimary">
+				{!isEdit && <Button onClick={addOfficeItem}>
 					<FaPlusCircle style={{marginRight: '1rem'}} /> {translations['office.slideout.action.more.offices']}
 				</Button>}
 			</div>

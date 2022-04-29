@@ -9,6 +9,7 @@ export const CLIENTS_ROUTE = 'clients';
 export const SERVICES_ROUTE = 'services';
 export const ACCOUNT_ROUTE = 'account';
 export const SETTINGS_ROUTE = 'settings';
+export const HELP_ROUTE = 'help';
 
 export const APP_ROUTES = {
 	DASHBOARD: `${BASE_ROUTE}/${DASHBOARD_ROUTE}`,
@@ -18,7 +19,8 @@ export const APP_ROUTES = {
 	CLIENTS: `${BASE_ROUTE}/${CLIENTS_ROUTE}`,
 	SERVICES: `${BASE_ROUTE}/${SERVICES_ROUTE}`,
 	ACCOUNT: `${BASE_ROUTE}/${ACCOUNT_ROUTE}`,
-	SETTINGS: `${BASE_ROUTE}/${SETTINGS_ROUTE}`
+	SETTINGS: `${BASE_ROUTE}/${SETTINGS_ROUTE}`,
+	HELP: `${BASE_ROUTE}/${HELP_ROUTE}`
 };
 
 /* Authorization routes */

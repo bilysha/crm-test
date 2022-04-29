@@ -1,15 +1,14 @@
 import InlineValidation from 'ui/inline-validation/inlineValidation';
 import classes from './input.module.scss';
 
-function Input({label, theme, size, invalid, invalidMessage, containerStyle, ...props}: any) {
-	return <div style={containerStyle} className={classes.inputContainer}>
+function Input({label, uiStyle, uiSize, invalid, invalidMessage, ...props}: any) {
+	return <div className={classes.inputContainer}>
 		<label className={classes.label}>{label}</label>
-		<div className={classes.inputWrapper}>
+		<div className={[classes.inputWrapper, classes[uiStyle || 'primary'], classes[uiSize || 'default']].join(' ')}>
 			<input {...props} className={
 				[
 					classes.input,
-					classes[theme || 'primary'],
-					classes[size || 'default'],
+					classes[uiStyle || 'primary'],
 					invalid ? classes.invalid : classes.valid
 				].join(' ')
 			} />

@@ -1,7 +1,10 @@
-import {LangContext, LANGS} from 'contexts/langContext';
 import {get} from 'lodash';
-import {useEffect, useState} from 'react';
+import {ReactElement, useEffect, useState} from 'react';
+
+import {LangContext, LANGS} from 'contexts/langContext';
 import {ThemeContext, THEMES} from '../contexts/themeContext';
+
+import {ILang} from 'models/lang.interfaces';
 
 const getThemeFromLocalStorage = () => JSON.parse(`${window?.localStorage?.getItem('theme')}`);
 const isLightThemeOnDevice = () => get(window.matchMedia('(prefers-color-scheme: light)'), 'matches');
@@ -9,8 +12,8 @@ const isLightThemeOnDevice = () => get(window.matchMedia('(prefers-color-scheme:
 const getLangFromLocalStorage = () => JSON.parse(`${window?.localStorage?.getItem('lang')}`);
 const getBrowserLang = () => navigator?.language;
 
-const getTheme = () => {
-	const theme = getThemeFromLocalStorage();
+const getTheme = (): string => {
+	const theme: string = getThemeFromLocalStorage();
 
 	if (Object.values(THEMES).includes(theme)) {
 		return theme;
@@ -23,14 +26,14 @@ const getTheme = () => {
 	return THEMES.DARK;
 };
 
-const getLang = () => {
-	const lang = getLangFromLocalStorage();
+const getLang = (): ILang => {
+	const lang: ILang = getLangFromLocalStorage();
 
 	if (lang) {
 		return lang;
 	}
 
-	const browserLang = getBrowserLang();
+	const browserLang: string = getBrowserLang();
 
 	if (browserLang.startsWith(LANGS.RUS.code)) {
 		return LANGS.RUS;
@@ -39,7 +42,7 @@ const getLang = () => {
 	return LANGS.ENG;
 }
 
-const AppProvider = ({children}: any) => {
+const AppProvider = ({children}: any): ReactElement => {
 	const [theme, setTheme] = useState(getTheme);
 	const [lang, setLang] = useState(getLang);
 	const [themeLoaded, setThemeLoaded] = useState(false);
@@ -49,13 +52,11 @@ const AppProvider = ({children}: any) => {
 		document.documentElement.dataset.theme = theme;
 		localStorage.setItem('theme', JSON.stringify(theme));
 		setThemeLoaded(true);
-		console.log('theme changed', theme);
 	}, [theme]);
 
 	useEffect(() => {
 		localStorage.setItem('lang', JSON.stringify(lang));
 		setLangLoaded(true);
-		console.log('lang changed', lang);
 	}, [lang]);
 
 	return <ThemeContext.Provider value={{theme, setTheme}}>

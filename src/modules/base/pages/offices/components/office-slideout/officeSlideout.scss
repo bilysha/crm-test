@@ -1,5 +1,17 @@
 @import "styles/variables.scss";
 
+:root[data-theme="Dark"] {
+    .crm-office-form__item {
+        border-color: $dark-color-secondary;
+    }
+}
+
+:root[data-theme="Light"] {
+    .crm-office-form__item {
+        border-color: $light-color-secondary;
+    }
+}
+
 .crm-office-form {
     &__item {
         position: relative;
@@ -8,7 +20,7 @@
         &:not(:last-child) {
             padding-bottom: $sizing-s;
             margin-bottom: $sizing-m;
-            border-bottom: 2px solid $dark-color-primary;
+            border-bottom: 2px solid;
         }
 
         &-delete-action {

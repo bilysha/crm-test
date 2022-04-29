@@ -1,0 +1,107 @@
+@import "styles/variables.scss";
+
+:root[data-theme="Dark"] {
+    .crm-user-dropdown__button {
+        color: $dark-color-text;
+
+        &:not(.active):hover,
+        &:not(.active):focus {
+            color: $dark-color-accent;
+            background-color: $dark-color-secondary;
+        }
+    }
+}
+
+:root[data-theme="Light"] {
+    .crm-user-dropdown__button {
+        color: $light-color-text;
+
+        &:not(.active):hover,
+        &:not(.active):focus {
+            color: $light-color-accent;
+            background-color: $light-color-secondary;
+        }
+    }
+}
+
+.crm-user-dropdown {
+    position: absolute;
+    right: 0;
+    z-index: 2;
+    background-color: $light-color-primary;
+    padding: $sizing-s 0;
+    border-radius: $border-radius-small;
+    border: 1px solid $light-color-secondary;
+    box-shadow: 0 0 0.125rem 0 $light-color-label-text;
+    width: 10rem;
+
+    &__list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+
+        &-item {
+            padding: $sizing-s $sizing-m;
+
+            &:hover {
+                background-color: $light-color-accent;
+                color: $color-white;
+                cursor: pointer;
+            }
+
+            &.sign-out:hover {
+                background-color: $color-error;
+            }
+
+            &-divider {
+                height: 1px;
+                background-color: #ccc;
+                margin: $sizing-s 0;
+            }
+        }
+    }
+
+    &.expanded {
+        display: block;
+    }
+
+    &.collapsed {
+        display: none;
+    }
+
+    &__container {
+        position: relative;
+    }
+
+    &__wrapper {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 2;
+        background-color: rgba(255, 255, 255, 0.3);
+
+        &.expanded {
+            display: block;
+        }
+
+        &.collapsed {
+            display: none;
+        }
+    }
+
+    &__button {
+        width: 2.5rem;
+        height: 2.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: $border-radius-small;
+        border: none;
+        background-color: transparent;
+        font-size: $font-size-l;
+    }
+}
