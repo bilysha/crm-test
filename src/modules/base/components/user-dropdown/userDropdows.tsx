@@ -1,13 +1,15 @@
 import {BiUser} from '@react-icons/all-files/bi/BiUser';
 import {APP_ROUTES, AUTHORIZATION_ROUTES} from 'components/router/routerConstants';
 import {useTranslation} from 'hooks/useTranslation';
-import {useReducer} from 'react';
+import {BaseContext} from 'modules/base/contexts/baseContext';
+import {useContext, useReducer} from 'react';
 import {useNavigate} from 'react-router-dom';
 import './userDropdown.scss';
 
 function UserDropdown() {
 	const [expanded, toggleExpanded] = useReducer((expanded: boolean) => !expanded, false);
 	const [translations] = useTranslation({path: 'base', filename: 'user-dropdown'});
+	const {setNotificationsVisibility} = useContext(BaseContext);
 	const navigate = useNavigate();
 
 	const onItemClicked = (): void => {
@@ -20,6 +22,7 @@ function UserDropdown() {
 	};
 
 	const onNotificationsClicked = (): void => {
+		setNotificationsVisibility(true);
 		onItemClicked();
 	};
 
