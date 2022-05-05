@@ -1,4 +1,5 @@
 @import "styles/variables.scss";
+@import "styles/mixins.scss";
 
 :root[data-theme="Dark"] {
     .crm-client-orders-history__list-item {
@@ -13,15 +14,13 @@
 }
 
 .crm-client-orders-history__list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    @include vertical-list;
     overflow: auto;
     padding-right: $sizing-s;
 
     &-item {
         padding: $sizing-m;
-        border-radius: $border-radius-small;
+        border-radius: $border-radius-s;
 
         &:not(:last-child) {
             margin-bottom: $sizing-m;

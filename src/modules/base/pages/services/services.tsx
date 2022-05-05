@@ -1,4 +1,4 @@
-import {FaPlusCircle} from '@react-icons/all-files/fa/FaPlusCircle';
+import {FiPlusSquare} from '@react-icons/all-files/fi/FiPlusSquare';
 import {useTranslation} from 'hooks/useTranslation';
 import {useState} from 'react';
 import CategoryModal from './components/category-modal/categoryModal';
@@ -8,6 +8,7 @@ import RemoveCategoryModal from './components/remove-category-modal/removeCatego
 import ServicesList from './components/services-list/servicesList';
 import {ServicesContext} from './contexts/servicesContext';
 import './services.scss';
+import Loader from 'ui/loader/loader';
 
 const initialServices = [
 	{
@@ -108,43 +109,49 @@ function Services() {
 			setServiceCategoryId
 		}}>
 			{
-				categoryModalVisibility && <CategoryModal
-					setModalVisibility={setCategoryModalVisibility}
-					onCancel={onCategoryModalCancelled}
-					onApply={onCategoryModalApplied}
-					translations={translations} />
+				translationsLoading
+					? <Loader />
+					: <>
+						{
+							categoryModalVisibility && <CategoryModal
+								setModalVisibility={setCategoryModalVisibility}
+								onCancel={onCategoryModalCancelled}
+								onApply={onCategoryModalApplied}
+								translations={translations} />
+						}
+						{
+							serviceModalVisibility && <ServiceModal
+								setModalVisibility={setServiceModalVisibility}
+								onCancel={onServiceModalCancelled}
+								onApply={onServiceModalApplied}
+								translations={translations} />
+						}
+						{
+							clearCategoryModalVisibility && <ClearCategoryModal
+								setModalVisibility={setClearCategoryModalVisibility}
+								onCancel={onClearCategoryCancelled}
+								onApply={onClearCategoryApplied}
+								translations={translations} />
+						}
+						{
+							removeCategoryModalVisibility && <RemoveCategoryModal
+								setModalVisibility={setRemoveCategoryModalVisibility}
+								onCancel={onRemoveCategoryCancelled}
+								onApply={onRemoveCategoryApplied}
+								translations={translations} />
+						}
+						<div className="crm-services__add-new-category">
+							<button
+								className="crm-services__add-new-category__button"
+								onClick={onAddCategoryClicked}
+								title={translations['services.add.new.category.btn']}>
+								<FiPlusSquare style={{marginRight: '1rem'}} />
+								{translations['services.category.btn.new']}
+							</button>
+						</div>
+						<ServicesList list={services} />
+					</>
 			}
-			{
-				serviceModalVisibility && <ServiceModal
-					setModalVisibility={setServiceModalVisibility}
-					onCancel={onServiceModalCancelled}
-					onApply={onServiceModalApplied}
-					translations={translations} />
-			}
-			{
-				clearCategoryModalVisibility && <ClearCategoryModal
-					setModalVisibility={setClearCategoryModalVisibility}
-					onCancel={onClearCategoryCancelled}
-					onApply={onClearCategoryApplied}
-					translations={translations} />
-			}
-			{
-				removeCategoryModalVisibility && <RemoveCategoryModal
-					setModalVisibility={setRemoveCategoryModalVisibility}
-					onCancel={onRemoveCategoryCancelled}
-					onApply={onRemoveCategoryApplied}
-					translations={translations} />
-			}
-			<div className="crm-services__add-new-category">
-				<button
-					className="crm-services__add-new-category__button"
-					onClick={onAddCategoryClicked}
-					title={translations['services.add.new.category.btn']}>
-					<FaPlusCircle style={{marginRight: '1rem'}} />
-					{translations['services.category.btn.new']}
-				</button>
-			</div>
-			<ServicesList list={services} />
 		</ServicesContext.Provider>
 	</div>
 }

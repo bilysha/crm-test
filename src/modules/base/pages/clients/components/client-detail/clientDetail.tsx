@@ -1,5 +1,5 @@
-import {FaTrash} from '@react-icons/all-files/fa/FaTrash';
-import {MdEdit} from '@react-icons/all-files/md/MdEdit';
+import {FiTrash} from '@react-icons/all-files/fi/FiTrash';
+import {FiEdit} from '@react-icons/all-files/fi/FiEdit';
 import {ThemeContext} from 'contexts/themeContext';
 import {useContext} from 'react';
 import ButtonIcon from 'ui/button-icon/buttonIcon';
@@ -30,8 +30,8 @@ function ClientDetail({translations}: any) {
 				</div>
 			</div>
 			<div className="crm-client-detail__heading-actions">
-				<ButtonIcon title={translations['service.category.edit']} style={{marginRight: '1rem'}} onClick={onEditClicked}><MdEdit /></ButtonIcon>
-				<ButtonIcon title={translations['service.category.remove']} onClick={onDeleteClicked}><FaTrash /></ButtonIcon>
+				<ButtonIcon title={translations['service.category.edit']} style={{marginRight: '1rem'}} onClick={onEditClicked}><FiEdit /></ButtonIcon>
+				<ButtonIcon title={translations['service.category.remove']} onClick={onDeleteClicked}><FiTrash /></ButtonIcon>
 			</div>
 		</div>
 		<div className="crm-client-detail__main">

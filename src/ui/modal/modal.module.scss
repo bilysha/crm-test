@@ -47,14 +47,15 @@
     max-width: 30rem;
     min-height: 10rem;
     max-height: 30rem;
-    border-radius: $border-radius-base;
+    border-radius: $border-radius-m;
     padding: $sizing-m;
     display: flex;
     flex-direction: column;
+    overflow: auto;
 }
 
 .crmModalHeading {
-    border-radius: $border-radius-base $border-radius-base 0 0;
+    border-radius: $border-radius-m $border-radius-m 0 0;
     padding-bottom: $sizing-m;
     margin-bottom: $sizing-m;
     border-bottom: 2px solid;
@@ -72,4 +73,5 @@
     flex: 1;
     display: flex;
     flex-direction: column;
+    overflow: auto;
 }

@@ -1,4 +1,5 @@
 @import "./variables.scss";
+@import "./mixins.scss";
 
 :root[data-theme="Dark"] {
     *::-webkit-scrollbar-track {
@@ -7,7 +8,7 @@
 
     *::-webkit-scrollbar-thumb {
         background-color: $dark-color-primary;
-		border-color: $dark-color-secondary;
+		@include base-border($dark-color-secondary);
     }
 }
 
@@ -18,17 +19,16 @@
 
     *::-webkit-scrollbar-thumb {
         background-color: $light-color-primary;
-		border-color: $light-color-secondary;
+		@include base-border($light-color-secondary);
     }
 }
 
 *::-webkit-scrollbar {
     width: 0.75rem;
     height: 0.75rem;
-    border-radius: $border-radius-base;
+    border-radius: $border-radius-m;
 }
 
 *::-webkit-scrollbar-thumb {
-    border-radius: $border-radius-base;
-    border: 2px solid;
+    border-radius: $border-radius-m;
 }

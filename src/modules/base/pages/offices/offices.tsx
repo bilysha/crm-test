@@ -17,7 +17,7 @@ function Offices() {
 	const [officeSlideoutVisibility, setOfficeSlideoutVisibility] = useState(false);
 	const [officeDeleteModalVisibility, setOfficeDeleteModalVisibility] = useState(false);
 	const [selectedOffice, setSelectedOffice] = useState({} as IOffice);
-	const [translations] = useTranslation({path: 'offices', filename: 'offices'});
+	const [translations, translationsLoading] = useTranslation({path: 'offices', filename: 'offices'});
 	const [fetchOffices, loadingOffices] = useFetching(async () => {
 		const list = await OfficesRestService.getAll();
 
@@ -85,7 +85,7 @@ function Offices() {
 					translations={translations} />
 			}
 			{
-				loadingOffices
+				loadingOffices || translationsLoading
 					? <Loader />
 					: <>
 						<div className="crm-offices__heading">

@@ -9,7 +9,7 @@ export const useFetching = (callback: any) => {
 
 		try {
 			await callback();
-			await wait(2000);
+			await wait(500);
 		} catch (e) {
 			setError(e);
 		} finally {

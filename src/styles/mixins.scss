@@ -1,0 +1,39 @@
+@mixin reset-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+@mixin vertical-list {
+    @include reset-list;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+@mixin horizontal-list {
+    @include reset-list;
+    display: flex;
+    overflow: auto;
+}
+
+@mixin normalize-button {
+    border: none;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin thin-border($color) {
+    border: 1px solid $color;
+}
+
+@mixin base-border($color) {
+    border: 2px solid $color;
+}
+
+@mixin base-border-dashed($color) {
+    border: 2px dashed $color;
+}
+

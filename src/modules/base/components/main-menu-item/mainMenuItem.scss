@@ -1,4 +1,5 @@
 @import "styles/variables.scss";
+@import "styles/mixins.scss";
 
 :root[data-theme="Dark"] {
     .crm-main-menu-item {
@@ -13,35 +14,39 @@
         &.active {
             background-color: $dark-color-accent;
         }
+
+        &:disabled {
+            color: #ccc;
+        }
     }
 }
 
 :root[data-theme="Light"] {
-	.crm-main-menu-item {
+    .crm-main-menu-item {
         color: $light-color-text;
 
-        &:not(.active):hover,
-        &:not(.active):focus {
+        &:not(.active):not(:disabled):hover,
+        &:not(.active):not(:disabled):focus {
             color: $light-color-accent;
             background-color: $light-color-secondary;
         }
 
         &.active {
-			color: #fff;
+            color: #fff;
             background-color: $light-color-accent;
+        }
+
+        &:disabled {
+            color: #ccc;
         }
     }
 }
 
 .crm-main-menu-item {
+    @include normalize-button;
     width: 2.5rem;
     height: 2.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: $border-radius-small;
-    border: none;
+    border-radius: $border-radius-s;
     padding: $sizing-s;
-    background-color: transparent;
     font-size: $font-size-l;
 }

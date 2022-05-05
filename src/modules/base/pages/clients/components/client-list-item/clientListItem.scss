@@ -1,10 +1,10 @@
 @import "styles/variables.scss";
+@import "styles/mixins.scss";
 
 :root[data-theme="Dark"] {
     .crm-clients-list-item {
         &__button {
-            background-color: transparent;
-            border-color: $dark-color-secondary;
+            @include base-border($dark-color-secondary);
 
             &:hover {
                 background-color: $dark-color-secondary;
@@ -29,8 +29,7 @@
 :root[data-theme="Light"] {
     .crm-clients-list-item {
         &__button {
-            background-color: transparent;
-            border-color: $light-color-secondary;
+            @include base-border($light-color-secondary);
 
             &:not(.selected):hover {
                 background-color: $light-color-secondary;
@@ -58,12 +57,11 @@
 
 .crm-clients-list-item {
     &__button {
-        border: 2px solid;
-        border-radius: $border-radius-small;
+        @include normalize-button;
+        justify-content: flex-start;
+        border-radius: $border-radius-s;
         padding: $sizing-s;
         width: 100%;
-        display: flex;
-        align-items: center;
     }
 
     &__photo {

@@ -1,8 +1,9 @@
 @import "styles/variables.scss";
+@import "styles/mixins.scss";
 
 :root[data-theme="Dark"] {
     .crm-service-category {
-        border-color: $dark-color-secondary;
+        @include base-border($dark-color-secondary);
         background-color: $dark-color-secondary;
 
         &__heading {
@@ -13,7 +14,7 @@
 
 :root[data-theme="Light"] {
     .crm-service-category {
-        border-color: $light-color-secondary;
+        @include base-border($light-color-secondary);
         background-color: $light-color-secondary;
 
         &__heading {
@@ -26,8 +27,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 2px solid;
-    border-radius: $border-radius-small;
+    border-radius: $border-radius-s;
     padding-right: $sizing-m;
 
     &__main {

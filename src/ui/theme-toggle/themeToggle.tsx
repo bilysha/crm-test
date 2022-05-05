@@ -1,6 +1,6 @@
 import {ThemeContext, THEMES} from 'contexts/themeContext';
-import {FaMoon} from '@react-icons/all-files/fa/FaMoon';
-import {FaSun} from '@react-icons/all-files/fa/FaSun';
+import {FiMoon} from '@react-icons/all-files/fi/FiMoon';
+import {FiSun} from '@react-icons/all-files/fi/FiSun';
 import ButtonIcon from 'ui/button-icon/buttonIcon';
 
 function ThemeToggle() {
@@ -9,7 +9,7 @@ function ThemeToggle() {
 			<ButtonIcon
 				title={theme === THEMES.DARK ? 'Switch to light' : 'Switch to dark'}
 				onClick={() => setTheme(theme === THEMES.DARK ? THEMES.LIGHT : THEMES.DARK)}>
-				{theme === THEMES.DARK ? <FaMoon /> : <FaSun />}
+				{theme === THEMES.DARK ? <FiMoon /> : <FiSun />}
 			</ButtonIcon>
 		)}
 	</ThemeContext.Consumer>

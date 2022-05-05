@@ -1,8 +1,9 @@
 @import "styles/variables.scss";
+@import "styles/mixins.scss";
 
 :root[data-theme="Dark"] {
     .crm-offices-list-item {
-        border-color: $dark-color-secondary;
+        @include base-border($dark-color-secondary);
 
         &__name,
         &__address,
@@ -26,7 +27,7 @@
 
 :root[data-theme="Light"] {
 	.crm-offices-list-item {
-        border-color: $light-color-secondary;
+        @include base-border($light-color-secondary);
 
         &__name,
         &__address,
@@ -54,8 +55,7 @@
     min-height: 14rem;
     max-width: 14rem;
     max-height: 14rem;
-    border: 2px solid;
-    border-radius: $border-radius-small;
+    border-radius: $border-radius-s;
     padding: $sizing-m;
     display: flex;
     flex-direction: column;

@@ -1,4 +1,5 @@
 @import "styles/variables.scss";
+@import "styles/mixins.scss";
 
 :root[data-theme="Dark"] {
     .crm-offices-list__empty {
@@ -13,10 +14,7 @@
 }
 
 .crm-offices-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
+    @include horizontal-list;
     flex-wrap: wrap;
     overflow: auto;
     padding: $sizing-m;

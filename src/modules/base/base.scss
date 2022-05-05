@@ -62,7 +62,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: flex-end;
-                padding: $sizing-s $sizing-m;
+                padding: $sizing-s;
 
                 &__action:not(:last-child) {
                     margin-right: $sizing-m;

@@ -1,6 +1,6 @@
 import ServiceCard from '../service-card/serviceCard';
 import './serviceCardList.scss';
-import {FaPlusCircle} from '@react-icons/all-files/fa/FaPlusCircle';
+import {FiPlusSquare} from '@react-icons/all-files/fi/FiPlusSquare';
 import {useContext} from 'react';
 import {ServicesContext} from '../../contexts/servicesContext';
 
@@ -16,7 +16,7 @@ function ServiceCardList({list, translations, categoryId}: any) {
 	return <ul className="crm-service-card-list">
 		<li className="crm-service-card-list-item">
 			<button className="crm-service-card-list-item__new" onClick={onAddServiceClicked}>
-				<FaPlusCircle style={{marginBottom: '1rem', fontSize: '1.5rem'}} />
+				<FiPlusSquare style={{marginBottom: '1rem', fontSize: '1.5rem'}} />
 				<span>{translations['service.card.add.new']}</span>
 			</button>
 		</li>

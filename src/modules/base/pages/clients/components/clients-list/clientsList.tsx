@@ -1,4 +1,4 @@
-import {FaPlusCircle} from '@react-icons/all-files/fa/FaPlusCircle';
+import {FiPlusSquare} from '@react-icons/all-files/fi/FiPlusSquare';
 import {ThemeContext} from 'contexts/themeContext';
 import {useContext} from 'react';
 import {ClientsContext} from '../../contexts/clientsContext';
@@ -17,7 +17,7 @@ function ClientsList({list, translations}: any) {
 	return <ul className="crm-clients-list">
 		<li className="crm-clients-list-item">
 			<button className="crm-clients-list-item__new" onClick={onNewClientClicked}>
-				<FaPlusCircle style={{marginRight: '0.5rem'}} />
+				<FiPlusSquare style={{marginRight: '0.5rem'}} />
 				{translations['clients.list.new']}
 			</button>
 		</li>

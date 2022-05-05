@@ -1,4 +1,4 @@
-import {FaPlusCircle} from '@react-icons/all-files/fa/FaPlusCircle';
+import {FiPlusSquare} from '@react-icons/all-files/fi/FiPlusSquare';
 import {IoMdTrash} from '@react-icons/all-files/io/IoMdTrash';
 import {cloneDeep, isEmpty, set} from 'lodash';
 import {useContext, useEffect, useMemo, useState} from 'react';
@@ -111,7 +111,7 @@ function OfficeSlideout({setVisibility, translations, onCancel, onApply}: any) {
 					</form>
 				}
 				{!isEdit && <Button onClick={addOfficeItem}>
-					<FaPlusCircle style={{marginRight: '1rem'}} /> {translations['office.slideout.action.more.offices']}
+					<FiPlusSquare style={{marginRight: '1rem'}} /> {translations['office.slideout.action.more.offices']}
 				</Button>}
 			</div>
 			<div className="crm-slideout-content__footer">

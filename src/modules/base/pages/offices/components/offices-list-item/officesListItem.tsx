@@ -1,8 +1,8 @@
 import {BiBuilding} from '@react-icons/all-files/bi/BiBuilding';
 import {BsPeopleFill} from '@react-icons/all-files/bs/BsPeopleFill';
 import {FaComment} from '@react-icons/all-files/fa/FaComment';
-import {IoMdTrash} from '@react-icons/all-files/io/IoMdTrash';
-import {MdEdit} from '@react-icons/all-files/md/MdEdit';
+import {FiTrash} from '@react-icons/all-files/fi/FiTrash';
+import {FiEdit} from '@react-icons/all-files/fi/FiEdit';
 import {MdViewList} from '@react-icons/all-files/md/MdViewList';
 import {useContext} from 'react';
 import ButtonIcon from 'ui/button-icon/buttonIcon';
@@ -26,13 +26,13 @@ function OfficesListItem({item, translations}: any) {
 				style={{marginBottom: '0.5rem'}}
 				title={translations['offices.list.item.action.edit']}
 				onClick={onEditClicked}>
-				<MdEdit />
+				<FiEdit />
 			</ButtonIcon>
 			<ButtonIcon
 				title={translations['offices.list.item.action.delete']}
 				onClick={() => setOfficeDeleteModalVisibility(true)}
 				accent="warn">
-				<IoMdTrash />
+				<FiTrash />
 			</ButtonIcon>
 		</div>
 		<div>

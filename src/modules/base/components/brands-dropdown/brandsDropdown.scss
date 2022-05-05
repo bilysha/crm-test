@@ -1,33 +1,9 @@
 @import "styles/variables.scss";
 @import "styles/mixins.scss";
 
-:root[data-theme="Dark"] {
-    .crm-user-dropdown__button {
-        color: $dark-color-text;
-
-        &:not(.active):hover,
-        &:not(.active):focus {
-            color: $dark-color-accent;
-            background-color: $dark-color-secondary;
-        }
-    }
-}
-
-:root[data-theme="Light"] {
-    .crm-user-dropdown__button {
-        color: $light-color-text;
-
-        &:not(.active):hover,
-        &:not(.active):focus {
-            color: $light-color-accent;
-            background-color: $light-color-secondary;
-        }
-    }
-}
-
-.crm-user-dropdown {
+.crm-brands-dropdown {
     position: absolute;
-    right: 0;
+    left: 0;
     top: 3.5rem;
     z-index: 2;
     background-color: $light-color-primary;
@@ -47,10 +23,6 @@
                 background-color: $light-color-accent;
                 color: $color-white;
                 cursor: pointer;
-            }
-
-            &.sign-out:hover {
-                background-color: $color-error;
             }
 
             &-divider {
@@ -93,9 +65,12 @@
 
     &__button {
         @include normalize-button;
+        background-color: $light-color-text;
+        color: $color-white;
+        border-radius: $border-radius-s;
         width: 2.5rem;
         height: 2.5rem;
-        border-radius: $border-radius-s;
-        font-size: $font-size-l;
+        font-size: $font-size-s;
+        font-weight: bold;
     }
 }

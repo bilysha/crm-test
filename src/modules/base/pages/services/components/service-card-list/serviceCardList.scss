@@ -1,4 +1,5 @@
 @import "styles/variables.scss";
+@import "styles/mixins.scss";
 
 :root[data-theme="Dark"] {
     .crm-service-card-list-item {
@@ -7,7 +8,7 @@
         }
 
         &__new {
-            border-color: $dark-color-secondary;
+            @include base-border-dashed($dark-color-secondary);
             color: $dark-color-text;
 
             &:hover {
@@ -24,7 +25,7 @@
         }
 
         &__new {
-            border-color: $light-color-secondary;
+            @include base-border-dashed($light-color-secondary);
             color: $light-color-text;
 
             &:hover {
@@ -35,11 +36,8 @@
 }
 
 .crm-service-card-list {
-    list-style: none;
-    margin: 0;
+    @include horizontal-list;
     padding: $sizing-l;
-    display: flex;
-    overflow-x: auto;
 
     &-item {
         min-width: 12rem;
@@ -49,18 +47,17 @@
         display: flex;
         margin-right: $sizing-m;
         cursor: pointer;
-        border-radius: $border-radius-small;
+        border-radius: $border-radius-s;
 
         &__new {
             flex: 1;
-            border: 2px dashed;
             background-color: transparent;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             transition: all 0.5s;
-            border-radius: $border-radius-small;
+            border-radius: $border-radius-s;
         }
     }
 }

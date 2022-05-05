@@ -1,11 +1,12 @@
 @import "styles/variables.scss";
+@import "styles/mixins.scss";
 
 :root[data-theme="Dark"] {
     .crm-clients-list {
         border-color: $dark-color-secondary;
 
         &-item__new {
-            border-color: $dark-color-secondary;
+            @include base-border-dashed($dark-color-secondary);
             color: $dark-color-text;
 
             &:hover {
@@ -20,7 +21,7 @@
         border-color: $light-color-secondary;
 
         &-item__new {
-            border-color: $light-color-secondary;
+            @include base-border-dashed($light-color-secondary);
             color: $light-color-text;
 
             &:hover {
@@ -31,9 +32,7 @@
 }
 
 .crm-clients-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    @include vertical-list;
     max-width: 15rem;
     padding-right: $sizing-m;
     border-right: 2px solid;
@@ -42,15 +41,12 @@
         margin-bottom: $sizing-s;
 
         &__new {
+            @include normalize-button;
+            justify-content: flex-start;
             width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: transparent;
-            padding: $sizing-m $sizing-s;
+            padding: $sizing-sm $sizing-s;
             transition: all 0.5s;
-            border: 2px dashed;
-            border-radius: $border-radius-small;
+            border-radius: $border-radius-s;
         }
     }
 }

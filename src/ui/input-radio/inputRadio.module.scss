@@ -7,7 +7,7 @@
 
     .label,
     .radioLabel {
-        color: $dark-color-text;
+        color: $dark-color-label-text;
     }
 
     .radio {
@@ -22,7 +22,7 @@
 
     .label,
     .radioLabel {
-        color: $light-color-text;
+        color: $light-color-label-text;
     }
 
     .radio {
@@ -43,9 +43,12 @@
 .radioContainer {
     display: flex;
     align-items: center;
-    margin-right: $sizing-m;
-    padding: 0.125rem 0;
+    padding: 0.125rem;
     cursor: pointer;
+
+    &:not(:last-child) {
+        margin-right: $sizing-m;
+    }
 }
 
 .radio {
@@ -60,7 +63,7 @@
 .inputRadioGroup {
     display: flex;
     align-items: center;
-    padding: $sizing-xs $sizing-m;
-    border-radius: $border-radius-small;
+    padding: $sizing-m $sizing-s;
+    border-radius: $border-radius-s;
 }
 

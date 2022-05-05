@@ -1,58 +1,42 @@
 @import "styles/variables.scss";
+@import "styles/mixins.scss";
 
 :root[data-theme="Dark"] {
-    .crm-main-menu {
-        &__logo {
-            background-color: $dark-color-text;
-            color: $dark-color-primary;
-
-            &-container {
-                border-bottom: 2px solid $dark-color-secondary;
-            }
-        }
+    .crm-main-menu__brands-dropdown {
+        border-bottom: 2px solid $dark-color-secondary;
     }
 }
 
 :root[data-theme="Light"] {
-    .crm-main-menu {
-        &__logo {
-            background-color: $light-color-text;
-            color: $light-color-primary;
-
-            &-container {
-                border-bottom: 2px solid $light-color-secondary;
-            }
-        }
+    .crm-main-menu__brands-dropdown {
+        border-bottom: 2px solid $light-color-secondary;
     }
 }
 
 .crm-main-menu {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     flex: 1;
-    padding-bottom: $sizing-m;
+    transition: max-width 0.5s;
 
-    &__logo {
-        border-radius: $border-radius-small;
-        width: 2.5rem;
-        height: 2.5rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: $font-size-s;
-        font-weight: bold;
-
-        &-container {
-            padding-bottom: $sizing-m;
-        }
+    &.expanded {
+        width: 10rem;
+        max-width: 10rem;
     }
 
     &__content {
         flex: 1;
         display: flex;
         flex-direction: column;
+        align-items: flex-start;
         justify-content: space-between;
+        width: 100%;
+    }
+
+    &__brands-dropdown {
+        width: 100%;
+        padding-bottom: $sizing-m;
     }
 
     &__nav {
@@ -61,11 +45,7 @@
         padding-top: $sizing-m;
 
         &-list {
-            display: flex;
-            flex-direction: column;
-            list-style: none;
-            padding: 0;
-            margin: 0;
+            @include vertical-list;
             margin-bottom: $sizing-m;
 
             &-item {
@@ -86,15 +66,10 @@
         justify-content: center;
 
         &-button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: none;
-            border-radius: $border-radius-small;
-            background-color: transparent;
+            @include normalize-button;
+            border-radius: $border-radius-s;
             font-size: $font-size-l;
             padding: $sizing-s;
-            margin-bottom: $sizing-s;
 
             &:hover {
                 color: $light-color-accent;
@@ -103,6 +78,10 @@
                 &:focus {
                     background-color: $light-color-secondary;
                 }
+            }
+
+            &.toggle-expanded-button {
+                margin-top: $sizing-m;
             }
         }
     }

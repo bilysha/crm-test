@@ -1,21 +1,25 @@
 @import "styles/variables.scss";
+@import "styles/mixins.scss";
 
 :root[data-theme="Dark"] {
     .primary {
         color: $dark-color-text;
         background-color: $dark-color-accent;
 
-        &:hover {
+        &:hover,
+        &:focus,
+        &:active {
             background-color: $dark-color-accent-hover;
         }
     }
 
     .secondary {
         color: $dark-color-text;
-        background-color: transparent;
-        border-color: $dark-color-primary;
+        @include thin-border($dark-color-primary);
 
-        &:hover {
+        &:hover,
+        &:focus,
+        &:active {
             border-color: $dark-color-text;
         }
     }
@@ -27,20 +31,22 @@
 
     .dashedPrimary {
         color: $dark-color-text;
-        background-color: transparent;
-        border: 2px dashed $dark-color-primary;
+        @include base-border-dashed($dark-color-primary);
 
-        &:hover {
+        &:hover,
+        &:focus,
+        &:active {
             background-color: $dark-color-primary;
         }
     }
 
     .dashedSecondary {
         color: $dark-color-text;
-        background-color: transparent;
-        border: 2px dashed $dark-color-secondary;
+        @include base-border-dashed($dark-color-secondary);
 
-        &:hover {
+        &:hover,
+        &:focus,
+        &:active {
             background-color: $dark-color-secondary;
         }
     }
@@ -55,17 +61,20 @@
         color: $color-white;
         background-color: $light-color-accent;
 
-        &:hover {
+        &:hover,
+        &:focus,
+        &:active {
             background-color: $light-color-accent-hover;
         }
     }
 
     .secondary {
         color: $light-color-text;
-        background-color: transparent;
-        border-color: $light-color-primary;
+        @include thin-border($light-color-primary);
 
-        &:hover {
+        &:hover,
+        &:focus,
+        &:active {
             border-color: $light-color-text;
         }
     }
@@ -77,20 +86,22 @@
 
     .dashedPrimary {
         color: $light-color-text;
-        background-color: transparent;
-        border: 2px dashed $light-color-primary;
+        @include base-border-dashed($light-color-primary);
 
-        &:hover {
+        &:hover,
+        &:focus,
+        &:active {
             background-color: $light-color-primary;
         }
     }
 
     .dashedSecondary {
         color: $light-color-text;
-        background-color: transparent;
-        border: 2px dashed $light-color-secondary;
+        @include base-border-dashed($light-color-secondary);
 
-        &:hover {
+        &:hover,
+        &:focus,
+        &:active {
             background-color: $light-color-secondary;
         }
     }
@@ -101,19 +112,12 @@
 }
 
 .button {
+    @include normalize-button;
     padding: $sizing-s $sizing-l;
-    border-radius: $border-radius-small;
-    border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border-radius: $border-radius-s;
 }
 
 .large {
     width: 100%;
     padding: $sizing-m;
-}
-
-.secondary {
-    border: 1px solid;
 }

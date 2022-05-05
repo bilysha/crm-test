@@ -1,5 +1,6 @@
 import {useTranslation} from 'hooks/useTranslation';
 import {useEffect, useState} from 'react';
+import Loader from 'ui/loader/loader';
 import './clients.scss';
 import ClientDetail from './components/client-detail/clientDetail';
 import ClientModal from './components/client-modal/clientModal';
@@ -47,7 +48,7 @@ function Clients() {
 	const [deleteClientModalVisibility, setDeteleClientModalVisibility] = useState(false);
 	const [clientModalVisibility, setClientModalVisibility] = useState(false);
 	const [clientEditing, setClientEditing] = useState(false);
-	const [translations] = useTranslation({path: 'clients', filename: 'clients'});
+	const [translations, translationsLoading] = useTranslation({path: 'clients', filename: 'clients'});
 
 	useEffect(() => {
 		setSelectedClient(clients[0]);
@@ -83,21 +84,27 @@ function Clients() {
 			setClientEditing
 		}}>
 			{
-				deleteClientModalVisibility && <DeleteClientModal
-					setModalVisibility={setDeteleClientModalVisibility}
-					onCancel={onDeleteClientCancelled}
-					onApply={onDeleteClientApplied}
-					translations={translations} />
+				translationsLoading
+					? <Loader />
+					: <>
+						{
+							deleteClientModalVisibility && <DeleteClientModal
+								setModalVisibility={setDeteleClientModalVisibility}
+								onCancel={onDeleteClientCancelled}
+								onApply={onDeleteClientApplied}
+								translations={translations} />
+						}
+						{
+							clientModalVisibility && <ClientModal
+								setModalVisibility={setClientModalVisibility}
+								onCancel={onClientCancelled}
+								onApply={onClientApplied}
+								translations={translations} />
+						}
+						<ClientsList list={clients} translations={translations} />
+						<ClientDetail translations={translations} />
+					</>
 			}
-			{
-				clientModalVisibility && <ClientModal
-					setModalVisibility={setClientModalVisibility}
-					onCancel={onClientCancelled}
-					onApply={onClientApplied}
-					translations={translations} />
-			}
-			<ClientsList list={clients} translations={translations} />
-			<ClientDetail translations={translations} />
 		</ClientsContext.Provider>
 	</div>
 }
